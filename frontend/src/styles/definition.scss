@@ -1,0 +1,100 @@
+@use "sass:math";
+
+$theme-color:#CA7B44;
+$bg-color: #1B1B1D;
+$bg-color-light: #262626;
+$color-red: #DF1818;
+$color-green: #2ABE0D;
+$color-gray: #878787;
+$color-text-black: #151419;
+$color-text-white: #fBFBFB;
+$color-text-gray: #CCCCCC;
+$color-light-gray: #D4D4D4;
+
+$page-padding: 15px;
+$side-gutter: 15px;
+$normal-font-size: 14px;
+
+$page-max-width: 640px;
+
+@mixin ellipsis($width:auto,$row:1) {
+    width: $width;
+    overflow: hidden;
+    display: block;
+    @if ($row > 1) {
+        display: -webkit-box;
+    }
+    @else {
+        white-space: nowrap;
+    }
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $row;
+    -webkit-box-orient: vertical;
+}
+@mixin en-break{
+    word-break: break-word;
+    word-wrap: normal;
+}
+
+@mixin flex-row($align:none, $justify:none, $wrap: none){
+    display: flex;
+    flex-direction: row;
+    @if $align != none{
+        align-items: $align;
+    }
+    @if($justify != none){
+        justify-content: $justify;
+    }
+    @if($wrap != none){
+        flex-wrap: $wrap;
+    }
+}
+@mixin flex-column($align:none, $justify:none, $wrap: none){
+    display: flex;
+    flex-direction:column;
+    @if $align != none{
+        align-items: $align;
+    }
+    @if($justify != none){
+        justify-content: $justify;
+    }
+    @if($wrap != none){
+        flex-wrap: $wrap;
+    }
+}
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin fs($px, $line-height:none){
+    & {
+        font-size: calc(#{$px}px * var(--font-scale));
+        @if $line-height != none {
+            line-height: math.div($line-height, $px);
+        }
+    }
+}
+@mixin fw($weight){
+    & {
+        @if($weight == bold){
+            font-weight: 700;
+        }
+        @else if($weight == regular){
+            font-weight: 400;
+        }
+        @else if($weight == medium){
+            font-weight: 500;
+        }
+        @else if($weight == light){
+            font-weight: 300;
+        }
+        @else if($weight == thin){
+            font-weight: 100;
+        }
+        @else{
+            font-weight: $weight;
+        }
+    }
+}

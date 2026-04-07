@@ -1,0 +1,885 @@
+{
+	"common": {
+		"button": {
+			"confirm": "確認"
+		},
+		"dialog": {
+			"confirm": "確認"
+		},
+		"error": {
+			"assetNotFound": "資產不存在",
+			"loadPaymentDesc": "加載支付說明",
+			"loadRedeemRules": "加載贖回規則",
+			"redeemRulesNotFound": "贖回規則不存在"
+		},
+		"label": {
+			"calendar": "日曆",
+			"estimated": "預估",
+			"view": "查看"
+		},
+		"message": {
+			"error": "錯誤",
+			"fail": "失敗",
+			"success": "成功",
+			"unknown": "未知錯誤"
+		},
+		"payment": {
+			"account": "賬戶：",
+			"bankName": "開戶行：",
+			"bankTransfer": "銀行轉賬",
+			"payee": "收款方：",
+			"paymentDescription": "支付說明",
+			"paymentMethod": "支付方式"
+		},
+		"redeem": {
+			"includeIncome": "包含收益 {amount}",
+			"quantity": "贖回份額",
+			"rules": "贖回規則"
+		},
+		"sms": {
+			"codeInputError": "請輸入4位驗證碼",
+			"codeSent": "驗證碼已發送",
+			"codeSentTo": "已向您{phone}的手機號發送驗證碼",
+			"codeSentWait": "驗證碼已發送，請稍候",
+			"resendCountdown": "{time}秒後重新發送",
+			"sendButton": "發送驗證碼",
+			"sendFailed": "發送驗證碼失敗"
+		},
+		"unit": {
+			"indefinite": "無限期",
+			"months": "{count}月",
+			"share": "份"
+		}
+	},
+	"components": {
+		"assetProfitChart": {
+			"income": "收益",
+			"period1m": "近1月",
+			"period3m": "近3月",
+			"period6m": "近6月",
+			"period7d": "近7日",
+			"periodAll": "成立以來"
+		},
+		"assetStatistics": {
+			"estimatedIncome": "含預估累計收益",
+			"holdQuantity": "持有份額",
+			"todayIncomeRate": "預估今日收益/率",
+			"totalAmount": "總金額",
+			"totalAssets": "總資產",
+			"totalIncomeRate": "預估總收益/率"
+		},
+		"billCard": {
+			"actualAmount": "實際到賬：",
+			"amount": "金額：",
+			"applyTime": "申請時間：",
+			"auditRemark": "審核備註：",
+			"auditTime": "平台確認時間：",
+			"billNumber": "流水號：",
+			"billType": "賬單類型：",
+			"projectName": "項目名稱：",
+			"quantity": "份額："
+		},
+		"captchaButton": {
+			"codeSent": "驗證碼已發送",
+			"get": "獲取",
+			"sendFailed": "發送驗證碼失敗，請重試"
+		},
+		"compLoadMore": {
+			"loading": "加載中...",
+			"loadmore": "加載更多",
+			"nomore": "沒有更多了"
+		},
+		"countryPhoneSelector": {
+			"search": "搜尋國家名稱、代碼或區號",
+			"selectCountry": "選擇國家"
+		},
+		"loginHistoryCard": {
+			"loginCity": "登錄城市：",
+			"loginIp": "登錄IP：",
+			"loginTime": "登錄時間：",
+			"loginType": "登錄方式："
+		},
+		"messageCard": {
+			"read": "已讀",
+			"unread": "未讀"
+		},
+		"orderCard": {
+			"account": "賬戶：",
+			"amount": "金額：",
+			"auditRemark": "審核備註：",
+			"chainAddress": "鏈地址：",
+			"contractNo": "合同號：",
+			"estimatedTime": "預計購買確認時間：",
+			"orderNumber": "訂單號：",
+			"payType": "支付方式：",
+			"payVoucher": "支付憑證：",
+			"payee": "收款方：",
+			"projectName": "項目名稱：",
+			"submitTime": "提交時間：",
+			"subscribeQuantity": "購入份額：",
+			"view": "查看"
+		},
+		"pdfPreview": {
+			"empty": "暫無內容",
+			"loadError": "PDF加載錯誤",
+			"loading": "加載中...",
+			"nextPage": "下一頁",
+			"pageInfo": "{current} / {total}",
+			"prevPage": "上一頁"
+		},
+		"projectCard": {
+			"expectedReturn": "預期年化收益",
+			"issuePrice": "發行單價",
+			"remainingQuantity": "剩餘數量（份）"
+		},
+		"userVerify": {
+			"auditPending": "投資者認證審核中",
+			"subtitle": "完成身份認證，開啟您的{rwa}投資之旅",
+			"verify": "投資者認證",
+			"welcome": "歡迎成為陽光基金用戶"
+		}
+	},
+	"error": {
+		"10001": "審核不存在",
+		"10002": "用戶認證已通過，無法重複提交",
+		"10003": "用戶已綁定2FA認證",
+		"10004": "2FA未初始化",
+		"10005": "2FA驗證碼錯誤",
+		"10006": "2FA未開啟",
+		"10007": "手機號不匹配",
+		"10008": "文件上傳失敗",
+		"10009": "文件大小超出限制",
+		"10010": "請填寫駁回理由",
+		"10011": "銀行帳號名稱与證件名稱不一致",
+		"10012": "登錄失敗，帳號密碼不正確",
+		"10013": "登錄失敗，帳號被禁用",
+		"10014": "用戶不存在",
+		"10015": "手機號已經被使用",
+		"10016": "手機號不能為空",
+		"20001": "用戶不存在",
+		"30001": "銀行不存在",
+		"30002": "銀行卡審核狀態無效",
+		"40001": "用戶登錄日誌不存在",
+		"50001": "消息模板不存在",
+		"50002": "用戶消息不存在",
+		"50003": "用戶消息已讀不存在",
+		"50100": "項目不存在",
+		"50101": "項目未在售",
+		"50102": "項目已售罄",
+		"50103": "庫存不足",
+		"50104": "購買數量低於起購量",
+		"50105": "錢包地址格式無效",
+		"50106": "項目信息不存在",
+		"50107": "項目狀態不允许修改上下架狀態（只有未開售和出售中狀態才能修改）",
+		"50108": "發行商銀行信息不存在",
+		"50200": "訂單不存在",
+		"50201": "訂單狀態不是待支付",
+		"50202": "訂單已過期",
+		"50203": "訂單不屬於當前用戶",
+		"50204": "驗證碼錯誤",
+		"50205": "支付憑證上傳失敗",
+		"50206": "訂單狀態不是審核中",
+		"50207": "審核不通過时必須填写原因",
+		"50208": "審核通過时必須上傳文件",
+		"50300": "訂單餘額不存在",
+		"50301": "訂單餘額不屬於當前用戶",
+		"50302": "餘額不足",
+		"50303": "持有份額不足",
+		"50304": "項目未到期，不能進行到期贖回",
+		"50305": "分紅金額超过可提取金額",
+		"50306": "没有可用銀行卡",
+		"50307": "訂單餘額查詢時間範圍不能超过90天",
+		"50400": "賬單不存在",
+		"50401": "賬單不是待審核狀態",
+		"50402": "賬單不是審核通過狀態",
+		"50403": "賬單已上傳支付憑證",
+		"50404": "審核不通過时必須填写原因",
+		"50405": "賬單狀態已變更，请刷新后重試",
+		"60001": "系统協議表不存在",
+		"70001": "用戶鏈地址表不存在",
+		"70002": "鏈地址不存在",
+		"70003": "鏈地址已綁定",
+		"70004": "鏈地址未綁定",
+		"70005": "簽名验证失敗",
+		"70006": "該狀態無法進行解綁",
+		"70007": "該狀態下無法進行操作",
+		"102004": "驗證碼不正確，原因：{}",
+		"102005": "未綁定帳號，需要進行綁定",
+		"102007": "手機號不存在",
+		"102008": "驗證碼不正確，原因：{}",
+		"1004005001": "文件大小超出限制"
+	},
+	"options": {
+		"agreementKey": {
+			"buy": "認購協議",
+			"privacy": "隱私保護協議",
+			"register": "註冊協議",
+			"service": "用戶服務協議"
+		},
+		"assetStatus": {
+			"approved": "審核通過",
+			"confirming": "確認中",
+			"ended": "已結束",
+			"profitting": "收益中",
+			"redeemable": "可贖回",
+			"rejected": "待收益"
+		},
+		"assetType": {
+			"digital": "數字資產",
+			"physical": "實體資產"
+		},
+		"auditStatus": {
+			"all": "全部",
+			"auditPassed": "審核通過",
+			"auditRejected": "審核未通過",
+			"payed": "已支付",
+			"pendingAudit": "待審核"
+		},
+		"billType": {
+			"dividend": "分紅",
+			"earlyRedemption": "提前贖回",
+			"maturityRedemption": "到期贖回"
+		},
+		"chainStatus": {
+			"binding": "綁定中",
+			"success": "正常",
+			"unbind": "已解綁",
+			"unbinding": "解綁中"
+		},
+		"currency": {
+			"cny": "人民幣",
+			"hkd": "港幣",
+			"usd": "美元",
+			"usdt": "USDT"
+		},
+		"fontSize": {
+			"extraLarge": "超大",
+			"large": "大",
+			"standard": "標準"
+		},
+		"loginType": {
+			"password": "密碼登錄",
+			"sms": "驗證碼登錄"
+		},
+		"orderStatus": {
+			"all": "全部",
+			"auditPassed": "審核通過",
+			"auditRejected": "審核未通過",
+			"auditing": "審核中",
+			"cancelled": "已取消",
+			"pendingPayment": "待支付",
+			"redeemed": "已贖回"
+		},
+		"payType": {
+			"bank": "銀行轉賬"
+		},
+		"projectState": {
+			"dividend": "分紅期",
+			"lockPeriod": "鎖定期",
+			"redeem": "贖回期",
+			"sold": "已售罄",
+			"subscription": "認購期"
+		},
+		"projectStatus": {
+			"notStarted": "未開售",
+			"onSale": "出售中",
+			"profitable": "盈利中",
+			"soldOut": "已售罄"
+		},
+		"projectType": {
+			"closed": "封閉型",
+			"open": "開放型"
+		},
+		"twoFactorAuthStatus": {
+			"disabled": "未開啟",
+			"enabled": "已開啟",
+			"pendingVerification": "待驗證",
+			"unbinding": "解綁中"
+		}
+	},
+	"pages": {
+		"about": {
+			"section1": {
+				"content1": "本平台為面向合資格投資者（Professional Investor / Accredited Investor）的真實世界資產（Real World Assets, RWA）信息披露與投資管理平台。平台通過數字化系統，對真實資產相關的投資信息進行集中展示、結構化管理與持續更新，協助投資者在合規框架下進行資產配置與投資決策。",
+				"content2": "平台不構成任何形式的投資要約、招攬或建議，亦不直接承諾任何投資回報。所有投資決策應由投資者基於自身判斷，並以正式簽署的法律文件為準。",
+				"title": "一、平台定位與目標"
+			},
+			"section2": {
+				"subsection1": {
+					"bullet1": "能源與電力相關資產",
+					"bullet2": "數字基礎設施與算力資產",
+					"bullet3": "礦業、資源及相關收益權",
+					"bullet4": "不動產及其他具有現金流屬性的資產",
+					"bullet5": "項目及資產基本情況說明",
+					"bullet6": "投資期限、規模及結構",
+					"bullet7": "收益分配機制（如適用）",
+					"bullet8": "已識別的主要風險因素",
+					"bullet9": "相關法律文件與第三方資料",
+					"content1": "平台展示的資產產品，均基於真實世界中的底層資產，例如但不限於：",
+					"content2": "針對每一資產產品，平台提供結構化的信息披露，包括：",
+					"content3": "所有信息均來源於項目方、託管機構或第三方專業機構，平台不對其完整性或準確性作出保證。",
+					"title": "1. 真實資產信息披露"
+				},
+				"title": "二、適用監管框架"
+			},
+			"section3": {
+				"subsection1": {
+					"bullet1": "能源與電力相關資產",
+					"bullet2": "數字基礎設施與算力資產",
+					"bullet3": "礦業、資源及相關收益權",
+					"bullet4": "不動產及其他具有現金流屬性的資產",
+					"bullet5": "項目及資產基本情況說明",
+					"bullet6": "投資期限、規模及結構",
+					"bullet7": "收益分配機制（如適用）",
+					"bullet8": "已識別的主要風險因素",
+					"bullet9": "相關法律文件與第三方資料",
+					"content1": "平台展示的資產產品，均基於真實世界中的底層資產，例如但不限於：",
+					"content2": "針對每一資產產品，平台提供結構化的信息披露，包括：",
+					"content3": "所有信息均來源於項目方、託管機構或第三方專業機構，平台不對其完整性或準確性作出保證。",
+					"title": "1. 真實資產信息披露"
+				},
+				"title": "三、核心功能概述"
+			}
+		},
+		"bill": {
+			"list": {
+				"orderFilterTip": "僅顯示訂單{orderId}的帳單"
+			}
+		},
+		"login": {
+			"button": {
+					"emailLogin": "郵箱登錄",
+				"login": "登錄",
+				"mobileLogin": "手機登錄",
+				"register": "註冊賬號",
+				"switchToCode": "驗證碼登錄",
+				"switchToPassword": "密碼登錄"
+			},
+			"form": {
+				"codeError": "請輸入驗證碼",
+				"codeLabel": "驗證碼",
+				"codePlaceholder": "請輸入驗證碼",
+					"emailError": "請輸入郵箱",
+					"emailFormatError": "郵箱格式不正確",
+					"emailLabel": "郵箱",
+					"emailPlaceholder": "請輸入郵箱",
+				"passwordError": "請輸入您的賬戶密碼",
+				"passwordLabel": "賬戶密碼",
+				"passwordPlaceholder": "您的賬戶密碼（6—12位數字+字母）",
+				"phoneError": "請輸入您的手機號",
+				"phoneFormatError": "手機號格式不正確",
+				"phoneLabel": "手機號",
+				"phonePlaceholder": "請輸入手機號",
+				"title": "Welcome to login"
+			},
+			"message": {
+				"agreeRequired": "請先同意協議",
+				"loggingIn": "正在登錄",
+				"loginFailed": "登錄失敗，請重試",
+				"loginSuccess": "登錄成功"
+			}
+		},
+		"message": {
+			"detail": {
+				"notFound": "消息不存在",
+				"order": "訂單",
+				"viewAddress": "查看地址：",
+				"viewOrder": "查看訂單："
+			}
+		},
+		"order": {
+			"checkout": {
+				"account": "賬戶：",
+				"applyDividend": "申請當期分紅",
+				"applySuccess": "申請分紅成功",
+				"arrivalTime": "到賬時間：",
+				"arrivalTimeValue": "平台確認後28日",
+				"confirmApplyDividend": "確認申請分紅",
+				"dividendAmount": "分紅金額",
+				"estimated": "預估",
+				"inputCodeTitle": "輸入驗證碼",
+				"loadPaymentDescError": "加載支付說明",
+				"payee": "收款方：",
+				"paymentDescription": "支付說明",
+				"paymentMethod": "支付方式"
+			},
+			"detail": {
+				"applyDividend": "申請當期分紅",
+				"contactService": "聯繫客服",
+				"earlyRedeem": "提前贖回",
+				"fullRedeem": "全部贖回",
+				"viewBill": "查看賬單"
+			},
+			"earlyRedeem": {
+				"account": "賬戶：",
+				"applyEarlyRedeem": "申請提前贖回",
+				"applySuccess": "申請提前贖回成功",
+				"confirmApplyRedeem": "確認提前贖回",
+				"estimated": "預估",
+				"estimatedRedeemAmount": "預估贖回金額：",
+				"fee": "手續費：",
+				"includeIncome": "包含收益 {amount}",
+				"inputCodeTitle": "輸入驗證碼",
+				"loadPaymentDescError": "加載支付說明",
+				"loadRedeemRulesError": "加載贖回規則",
+				"minimumStart": "{quantity}份起贖",
+				"payee": "收款方：",
+				"paymentDescription": "支付說明",
+				"paymentMethod": "支付方式",
+				"redeemQuantity": "贖回份額",
+				"redeemRules": "贖回規則",
+				"redeemRulesNotFound": "贖回規則不存在",
+				"view": "查看"
+			},
+			"index": {
+				"cumulativeIncome": "累計收益/率",
+				"goInvest": "去投資",
+				"loginRegister": "註冊/登錄",
+				"noInvestment": "您暫未投資任何項目，請前往市場選購",
+				"projectName": "項目名稱",
+				"status": "狀態",
+				"totalAmount": "總金額"
+			},
+			"individualProfit": {
+				"calendar": "日曆",
+				"filterTip": "僅顯示訂單{orderId}的收益",
+				"noRecord": "暫無收益記錄",
+				"profitDetails": "收益明細",
+				"profitRate": "收益/漲幅"
+			},
+			"pay": {
+				"account": "賬戶：",
+				"clear": "清除",
+				"contractNo": "合同號",
+				"contractNoPlaceholder": "請填寫您線下簽署合同的合同號",
+				"countdownAlert": "請在{time}內完成支付，否則訂單將自動取消",
+				"enterContractNo": "請填寫合同號",
+				"estimatedConfirmTime": "預計購買確認時間",
+				"loadPaymentInfoError": "加載支付信息",
+				"orderNotFound": "訂單不存在",
+				"payee": "收款方：",
+				"paymentCompleted": "我已完成支付",
+				"paymentTitle": "請付款至下方收款賬戶，並上傳支付憑證，平台確認後將向您的鏈地址劃撥相應資產",
+				"paymentVoucher": "支付憑證",
+				"purchaseQuantity": "購買份額",
+				"remark": "注：平台確認不代表項目啟動，項目將在基金募資完畢後啟動，如果未能啟動，您的資金將原路退回",
+				"submitPayment": "提交支付",
+				"submitSuccess": "支付信息提交",
+				"upload": "上傳",
+				"uploadVoucher": "請上傳支付憑證"
+			},
+			"popup": {
+				"availableDividend": "可分紅金額",
+				"dividendAmount": "分紅金額",
+				"dividendAmountError": "請輸入有效的分紅金額",
+				"dividendAmountExceed": "分紅金額不能超過 {amount}",
+				"dividendAmountPlaceholder": "請輸入分紅金額",
+				"earlyRedeemButton": "提前全部贖回",
+				"earlyRedeemMessage": "提前贖回將收取高額手續費",
+				"earlyRedeemTitle": "提前贖回規則",
+				"redeemAmount": "贖回金額",
+				"redeemButton": "確認贖回",
+				"redeemTitle": "全部贖回",
+				"requestDividendButton": "確認申請",
+				"requestDividendTitle": "申請分紅"
+			},
+			"profit": {
+				"calendar": "日曆",
+				"noRecord": "暫無收益記錄",
+				"profitDetails": "收益明細",
+				"profitRate": "收益/漲幅"
+			},
+			"redeem": {
+				"account": "賬戶：",
+				"applyRedeem": "申請贖回",
+				"confirmRedeem": "確認贖回",
+				"estimated": "預估",
+				"includeIncome": "包含收益 {amount}",
+				"inputCode": "輸入驗證碼",
+				"loadPaymentDescError": "加載支付說明",
+				"loadRedeemRulesError": "加載贖回規則",
+				"payee": "收款方：",
+				"paymentDescription": "支付說明",
+				"paymentMethod": "支付方式",
+				"redeemQuantity": "贖回份額",
+				"redeemRules": "贖回規則",
+				"redeemRulesNotFound": "贖回規則不存在",
+				"redeemSuccess": "贖回成功",
+				"view": "查看"
+			}
+		},
+		"project": {
+			"buy": {
+				"bindAddress": "去綁定",
+				"buyButton": "購買",
+				"chainAddress": "鏈地址",
+				"completePayment": "請完成支付",
+				"minimumStart": "{quantity}份起購",
+				"notInSubscription": "當前不在認購期",
+				"purchaseInstructions": "購買須知",
+				"purchaseQuantity": "購入份額",
+				"remark": "注：平台確認不代表項目啟動，項目將在基金募資完畢後啟動，如果未能啟動，您的資金將原路退回",
+				"selectChainAddress": "請選擇",
+				"view": "查看"
+			},
+			"components": {
+				"orderContract": {
+					"noContracts": "暫無購買合同"
+				},
+				"popupChainAddress": {
+					"title": "選擇鏈地址"
+				},
+				"popupConfirmProjectBuy": {
+					"agreeRequired": "請同意協議",
+					"confirmBuy": "確認購買"
+				},
+				"popupNoticeDetail": {
+					"attachments": "附件",
+					"content": "內容",
+					"noticeNo": "通知編號：",
+					"publishTime": "發佈時間："
+				},
+				"projectDetailBuy": {
+					"customerService": "客服",
+					"insufficientQuantity": "剩餘數量不足",
+					"notInSubscription": "不在認購期",
+					"notVerified": "用戶未完成投資者認證，無法購買，是否跳轉認證？",
+					"projectShare": "項目分享",
+					"share": "分享"
+				},
+				"projectDetailDocument": {
+					"loadFailed": "加載失敗，請重試",
+					"loading": "加載中...",
+					"noMaterials": "暫無項目資料",
+					"viewAfterLogin": "登錄後查看"
+				},
+				"projectDetailInfo": {
+					"dividendRules": "分紅規則",
+					"fundDuration": "基金時長",
+					"issueChain": "發行鏈",
+					"issueQuantity": "發行數量（份）",
+					"minimumPurchase": "起購量（份）",
+					"projectName": "項目名稱",
+					"projectType": "項目類型",
+					"publisher": "發行商",
+					"redemptionRules": "贖回規則"
+				},
+				"projectDetailIntroduction": {
+					"noIntroduction": "暫無項目介紹"
+				},
+				"projectDetailNews": {
+					"noNotices": "暫無通知公告"
+				},
+				"projectInfo": {
+					"issuanceInfo": "發行信息",
+					"notices": "通知公告",
+					"projectIntroduction": "項目介紹",
+					"projectMaterials": "項目資料",
+					"purchaseContracts": "購買合同"
+				},
+				"projectSwitcher": {
+					"all": "全部",
+					"noProjects": "暫無相關項目"
+				},
+				"protocolConfirm": {
+					"agreeText": "我已閱讀並同意"
+				}
+			},
+			"detail": {
+				"expectedAnnualReturn": "預期年化收益",
+				"issueUnitPrice": "發行單價",
+				"remainingQuantity": "剩餘數量（份）"
+			},
+			"index": {
+				"feature1Content1": "對接香港 Web3 與金融監管環境",
+				"feature1Content2": "支持持牌主體參與與合規發行結構",
+				"feature1Content3": "兼容 KYC / KYB / AML / 投資者適當性管理",
+				"feature2Content1": "一資產一結構，一資產一合約",
+				"feature2Content2": "明確資產來源、權屬關係與收益邏輯",
+				"feature2Content3": "支持算力、能源、碳資產、應收賬款、文化資產等多類型 RWA",
+				"feature3Content1": "RWA 資產建模引擎",
+				"feature3Content2": "合規代幣化發行模塊",
+				"feature3Content3": "鏈上收益分配與清算系統",
+				"feature3Content4": "RWA 生命週期管理（發行 / 持有 / 流轉 / 退出）",
+				"hongKongCompliance": "香港合規優先",
+				"modularInfrastructure": "模塊化 RWA 基礎設施",
+				"realAssets": "真實資產，真實映射",
+				"registerLogin": "註冊/登錄",
+				"slogan": "連接真實資產，走向全球市場",
+				"subTitle": "讓價值，被全球可信連接",
+				"welcomeTitle": "歡迎使用陽光基金",
+				"welcomeTitleRWA": "歡迎使用高歌RWA",
+				"whyChoose": "為什麼選擇陽光基金？",
+				"whyChooseRWA": "為什麼選擇高歌RWA？"
+			}
+		},
+		"protocol": {
+			"detail": {
+				"loadError": "加載協議詳情",
+				"loading": "加載中..."
+			},
+			"list": {
+				"loadError": "加載協議列表"
+			}
+		},
+		"register": {
+			"button": {
+				"emailRegister": "郵箱註冊",
+				"goLogin": "已有賬號？去登錄",
+				"mobileRegister": "手機號註冊",
+				"register": "註冊"
+			},
+			"form": {
+				"codeError": "請輸入驗證碼",
+				"codeLabel": "驗證碼",
+				"codePlaceholder": "請輸入驗證碼",
+				"confirmPasswordError": "請再次輸入您的賬戶密碼",
+				"confirmPasswordLabel": "確認密碼",
+				"confirmPasswordMismatch": "兩次輸入的密碼不一致",
+				"confirmPasswordPlaceholder": "請再次輸入您的賬戶密碼",
+				"passwordError": "請輸入您的賬戶密碼",
+				"passwordLabel": "密碼",
+				"passwordLengthError": "密碼長度為6-12位",
+				"passwordPlaceholder": "您的賬戶密碼（6—12位數字+字母）",
+				"phoneError": "請輸入您的手機號",
+				"phoneLabel": "手機號",
+				"phonePlaceholder": "請輸入手機號"
+			},
+			"message": {
+				"agreeRequired": "請先同意協議",
+				"registerFailed": "註冊失敗，請重試",
+				"registerSuccess": "註冊成功",
+				"registering": "正在註冊"
+			}
+		},
+		"user": {
+			"auth": {
+				"bankCard": "銀行卡",
+				"bankFlow": "銀行流水單",
+				"edit": "修改",
+				"editBankInfo": "修改銀行卡信息",
+				"idCard": "身份證",
+				"phone": "聯繫電話",
+				"qualification": "職業資質",
+				"reason": "原因：",
+				"residenceProof": "住址證明",
+				"submitAudit": "提交審核",
+				"submitTime": "提交時間："
+			},
+			"bind": {
+				"email": "郵箱",
+				"emailLabel": "郵箱",
+				"emailPlaceholder": "請輸入郵箱",
+				"fail": "綁定失敗",
+				"mailCodeLabel": "郵箱驗證碼",
+				"mailCodePlaceholder": "請輸入郵箱驗證碼",
+				"mobile": "手機號",
+				"mobileLabel": "手機號",
+				"mobilePlaceholder": "請輸入手機號",
+				"smsCodeLabel": "手機驗證碼",
+				"smsCodePlaceholder": "請輸入手機驗證碼",
+				"success": "綁定成功",
+				"titleEmail": "綁定郵箱",
+				"titleMobile": "綁定手機"
+			},
+			"bindChainAddress": {
+				"bindSuccess": "提交綁定鏈地址成功",
+				"confirmButton": "確認綁定",
+				"connectButton": "連接錢包",
+				"connectError": "連接錢包失敗",
+				"connectPrompt": "請連接您的錢包",
+				"connectedAddress": "已連接地址",
+				"getSignatureFailed": "獲取簽名失敗",
+				"messageError": "獲取簽名消息失敗",
+				"notConnected": "請先連接錢包",
+				"submitBindFailed": "提交綁定失敗",
+				"switch": "切換",
+				"switchError": "切換地址失敗",
+				"title": "綁定鏈地址"
+			},
+			"chainAddress": {
+				"confirmUnbind": "確認解綁",
+				"empty": "暫無鏈地址",
+				"unbindFailed": "解綁失敗",
+				"unbindMessage": "確定要解綁鏈地址 {address} 嗎？",
+				"unbindSuccess": "解綁成功"
+			},
+			"currency": {
+				"setError": "設置失敗，請重試",
+				"title": "選擇貨幣"
+			},
+			"fontSize": {
+				"title": "字體大小"
+			},
+			"index": {
+				"loginRegister": "註冊/登錄",
+				"logout": "退出登錄",
+				"menu": {
+					"about": "關於我們",
+					"address": "鏈地址",
+					"audit": "身份認證",
+					"bill": "我的賬單",
+					"bindEmail": "綁定郵箱",
+					"bindMobile": "綁定手機",
+					"contact": "聯繫客服",
+					"currency": "貨幣",
+					"fontSize": "字體大小",
+					"history": "登錄歷史",
+					"language": "語言",
+					"order": "我的訂單",
+					"password": "賬戶密碼",
+					"protocol": "平台協議",
+					"twofa": "雙因素認證(2FA)",
+					"viewBind": "查看綁定"
+				}
+			},
+			"language": {
+				"title": "切換語言"
+			},
+			"loginPassword": {
+				"confirmPassword": "確認新密碼",
+				"confirmPasswordError": "請確認新密碼",
+				"emailCode": "郵箱驗證碼",
+				"newPassword": "新密碼",
+				"newPasswordError": "請輸入新密碼",
+				"passwordLengthError": "密碼長度至少6位",
+				"passwordMismatch": "兩次輸入的密碼不一致",
+				"resetButton": "重置密碼",
+				"resetSuccess": "密碼重置成功",
+				"smsCode": "短信驗證碼",
+				"verificationCode": "驗證碼"
+			},
+			"password": {
+				"loginPassword": "登錄密碼 ******"
+			},
+			"twofa": {
+				"codeError": "驗證碼錯誤或驗證失敗",
+				"confirmUnbind": "確認要請求解綁2FA嗎?",
+				"rebind": "重新綁定",
+				"title": "雙因素身份驗證(2FA)",
+				"unbind": "解綁",
+				"verify": "驗證",
+				"verifyAndBind": "驗證並綁定",
+				"verifyFailed": "2FA驗證失敗",
+				"verifySuccess": "2FA驗證成功"
+			},
+			"verify": {
+				"account": "賬戶",
+				"accountName": "開戶名",
+				"accountNamePlaceholder": "請填寫開戶名",
+				"accountPlaceholder": "請填寫賬戶",
+				"agreeRequired": "請同意協議",
+				"bankCardGroup": "銀行卡",
+				"bankFlow": "銀行流水單",
+				"bankFlowNote": "（請上傳jpg或png格式, 最多6張, 每張不超過{size}）",
+				"bankName": "開戶行",
+				"bankNamePlaceholder": "請填寫開戶行",
+				"expireDate": "有效期",
+				"expireDatePlaceholder": "請選擇您的證件有效期",
+				"formatNote": "（請上傳jpg或png格式）",
+				"idCardBack": "上傳身份證原件國徽面",
+				"idCardFront": "上傳身份證原件頭像面",
+				"idCardNumber": "身份證號",
+				"idCardNumberPlaceholder": "請輸入您的身份證號",
+				"loadError": "加載信息失敗",
+				"phonePlaceholder": "請填寫聯繫電話",
+				"qualification": "投資資質",
+				"qualificationNote": "（請上傳jpg或png格式, 最多6張, 每張不超過{size}）",
+				"realName": "姓名",
+				"realNamePlaceholder": "請輸入您的真實姓名",
+				"recognize": "識別",
+				"recognizing": "識別中...",
+				"residenceProof": "住址證明",
+				"residenceProofNote": "（請上傳jpg或png格式, 最多6張, 每張不超過{size}）",
+				"submitButton": "提交認證申請",
+				"uploadIdCard": "上傳身份證"
+			},
+			"verifySubmitted": {
+				"home": "返回首頁",
+				"message": "認證申請已提交，請等待審核"
+			}
+		}
+	},
+	"popup": {
+		"bind2fa": {
+			"codeInputHint": "請輸入6位驗證碼",
+			"confirmBtn": "確認綁定",
+			"errorMsg": "驗證碼錯誤或綁定失敗",
+			"failMsg": "2FA綁定失敗",
+			"successMsg": "2FA綁定成功",
+			"title": "綁定雙因素身份驗證",
+			"verifyCodeHint": "請輸入驗證器中的6位驗證碼"
+		},
+		"contactService": {
+			"copyHint": "點擊複製",
+			"email": "郵箱",
+			"title": "聯繫客服",
+			"wechat": "微信"
+		},
+		"editUserInfo": {
+			"avatar": "頭像",
+			"nickname": "暱稱",
+			"nicknameHint": "請輸入暱稱",
+			"saveBtn": "保存",
+			"successMsg": "修改用戶信息",
+			"title": "編輯用戶信息",
+			"uploadHint": "點擊上傳頭像"
+		},
+		"initBind2fa": {
+			"addBtn": "添加到驗證器",
+			"copyBtn": "複製密鑰",
+			"initFailMsg": "初始化2FA失敗",
+			"title": "綁定雙因素身份驗證",
+			"verifyBtn": "驗證綁定"
+		},
+		"input2fa": {
+			"codeInputHint": "請輸入6位驗證碼",
+			"confirmBtn": "確認",
+			"title": "輸入雙因素身份驗證碼",
+			"verifyCodeHint": "請輸入驗證器中的6位驗證碼"
+		},
+		"inputCode": {
+			"codeInputHint": "請輸入4位驗證碼",
+			"confirmBtn": "確認",
+			"emailCodeSentHint": "已向您{email}的郵箱發送驗證碼",
+			"getCodeBtn": "獲取驗證碼",
+			"getEmailCodeBtn": "獲取郵箱驗證碼",
+			"getSmsCodeBtn": "獲取短信驗證碼",
+			"smsCodeSentHint": "已向您{phone}的手機號發送驗證碼",
+			"switchToEmail": "改用郵箱驗證碼",
+			"switchToSms": "改用短信驗證碼",
+			"title": "輸入驗證碼",
+			"twoFactorHint": "請輸入6位雙因素驗證碼"
+		},
+		"protocol": {
+			"loadFailMsg": "加載協議",
+			"loadingMsg": "加載中...",
+			"title": "協議詳情"
+		},
+		"share": {
+			"copiedMsg": "已複製到剪貼板",
+			"copyLink": "複製鏈接",
+			"failMsg": "分享失敗",
+			"title": "分享到"
+		},
+		"unbind2fa": {
+			"codeInputHint": "請輸入4位驗證碼",
+			"codeSentMsg": "驗證碼已發送，請稍候",
+			"codeSentSuccessMsg": "驗證碼已發送",
+			"confirmBtn": "確認解綁",
+			"countdownMsg": "{time}秒後重新發送",
+			"errorMsg": "驗證碼錯誤或解綁失敗",
+			"failMsg": "2FA解綁失敗",
+			"sendCodeBtn": "發送驗證碼",
+			"successMsg": "2FA解綁成功"
+		},
+		"userVerifyConfirm": {
+			"codeInputHint": "請輸入4位驗證碼",
+			"confirmBtn": "確認",
+			"countdownMsg": "{time}秒後重新發送",
+			"sendCodeBtn": "發送驗證碼",
+			"smsCodeSentHint": "已向您{phone}的手機號發送驗證碼",
+			"title": "發送驗證碼"
+		}
+	}
+}

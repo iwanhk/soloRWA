@@ -1,0 +1,281 @@
+{
+	"pages": [
+		{
+			"path": "pages/project/index",
+			"style": {
+				"navigationBarTitleText": "%pages.project.index%",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/order/index",
+			"style": {
+				"navigationBarTitleText": "%pages.order.index%",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "%pages.user.index%",
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/main/login",
+			"style": {
+				"navigationBarTitleText": "%pages.main.login%",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/main/register",
+			"style": {
+				"navigationBarTitleText": "%pages.main.register%",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/main/test",
+			"style": {
+				"navigationBarTitleText": "%pages.main.test%"
+			}
+		},
+		{
+			"path": "pages/user/verify",
+			"style": {
+				"navigationBarTitleText": "%pages.user.verify%",
+				"navigationBarBackgroundColor": "#fff",
+				"navigationBarTextStyle": "black",
+				"backgroundColorBottom": "#fff",
+				"backgroundColorTop": "#fff",
+				"app-plus": {
+					"background": "#fff"
+				}
+			}
+		},
+		{
+			"path": "pages/user/verify-submitted",
+			"style": {
+				"navigationBarTitleText": "%pages.user.verify-submitted%"
+			}
+		},
+		{
+			"path": "pages/user/auth",
+			"style": {
+				"navigationBarTitleText": "%pages.user.auth%"
+			}
+		},
+		{
+			"path": "pages/message/index",
+			"style": {
+				"navigationBarTitleText": "%pages.message.index%"
+			}
+		},
+		{
+			"path": "pages/message/detail",
+			"style": {
+				"navigationBarTitleText": "%pages.message.detail%"
+			}
+		},
+		{
+			"path": "pages/project/detail",
+			"style": {
+				"navigationBarTitleText": "%pages.project.detail%",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/project/buy",
+			"style": {
+				"navigationBarTitleText": "%pages.project.buy%"
+			}
+		},
+		{
+			"path": "pages/user/2fa",
+			"style": {
+				"navigationBarTitleText": "%pages.user.2fa%"
+			}
+		},
+		{
+			"path": "pages/user/bind",
+			"style": {
+				"navigationBarTitleText": "%pages.user.bind%"
+			}
+		},
+		{
+			"path": "pages/user/chain-address",
+			"style": {
+				"navigationBarTitleText": "%pages.user.chain-address%",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"text": "\ue627",
+								"fontSrc": "/static/fonts/iconfont.ttf",
+								"fontSize": "16",
+								"width": "30px",
+								"color": "#CA7B44"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/user/password",
+			"style": {
+				"navigationBarTitleText": "%pages.user.password%"
+			}
+		},
+		{
+			"path": "pages/user/login-password",
+			"style": {
+				"navigationBarTitleText": "%pages.user.login-password%"
+			}
+		},
+		{
+			"path": "pages/user/login-history",
+			"style": {
+				"navigationBarTitleText": "%pages.user.login-history%",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/main/about",
+			"style": {
+				"navigationBarTitleText": "%pages.main.about%"
+			}
+		},
+		{
+			"path": "pages/main/protocol-list",
+			"style": {
+				"navigationBarTitleText": "%pages.main.protocol-list%"
+			}
+		},
+		{
+			"path": "pages/main/protocol-detail",
+			"style": {
+				"navigationBarTitleText": "%pages.main.protocol-detail%"
+			}
+		},
+		{
+			"path": "pages/order/pay",
+			"style": {
+				"navigationBarTitleText": "%pages.order.pay%"
+			}
+		},
+		{
+			"path": "pages/order/detail",
+			"style": {
+				"navigationBarTitleText": "%pages.order.detail%",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"text": "\ue62a",
+								"fontSrc": "/static/fonts/iconfont.ttf",
+								"fontSize": "16",
+								"width": "30px",
+								"color": "#FBFBFB"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/order/list",
+			"style": {
+				"navigationBarTitleText": "%pages.order.list%",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/order/early-redeem",
+			"style": {
+				"navigationBarTitleText": "%pages.order.early-redeem%"
+			}
+		},
+		{
+			"path": "pages/order/checkout",
+			"style": {
+				"navigationBarTitleText": "%pages.order.checkout%"
+			}
+		},
+		{
+			"path": "pages/order/redeem",
+			"style": {
+				"navigationBarTitleText": "%pages.order.redeem%"
+			}
+		},
+		{
+			"path": "pages/order/profit",
+			"style": {
+				"navigationBarTitleText": "%pages.order.profit%"
+			}
+		},
+		{
+			"path": "pages/order/individual-profit",
+			"style": {
+				"navigationBarTitleText": "%pages.order.individual-profit%"
+			}
+		},
+		{
+			"path": "pages/bill/list",
+			"style": {
+				"navigationBarTitleText": "%pages.bill.list%",
+				"enablePullDownRefresh": true
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "%global.title%",
+		"navigationBarBackgroundColor": "#1B1B1D",
+		"backgroundColor": "#1B1B1D"
+	},
+	"tabBar": {
+		"color": "#FBFBFC",
+		"selectedColor": "#CA7B44",
+		"borderStyle": "black",
+		"backgroundColor": "#151419",
+		"iconWidth": "21px",
+		"fontSize": "12px",
+		"list": [
+			{
+				"pagePath": "pages/project/index",
+        "iconPath": "static/images/tab/tab-market.png",
+        "selectedIconPath": "static/images/tab/tab-market-active.png",
+				"text": "%tabBar.market%"
+			},
+			{
+				"pagePath": "pages/order/index",
+				"iconPath": "static/images/tab/tab-asset.png",
+				"selectedIconPath": "static/images/tab/tab-asset-active.png",
+				"text": "%tabBar.assets%"
+			},
+			{
+				"pagePath": "pages/user/index",
+				"iconPath": "static/images/tab/tab-user.png",
+				"selectedIconPath": "static/images/tab/tab-user-active.png",
+				"text": "%tabBar.profile%"
+			}
+		]
+	},
+	"easycom": {
+		"autoscan": true,
+		// 注意一定要放在custom里，否则无效，https://ask.dcloud.net.cn/question/131175
+		"custom": {
+			"^u--(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+			"^up-(.*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+			"^u-([^-].*)": "@/uni_modules/uview-plus/components/u-$1/u-$1.vue",
+			"^ly-(.*)" : "@/uni_modules/ly-charts/components/ly-$1/ly-$1.vue"
+		}
+	}
+}

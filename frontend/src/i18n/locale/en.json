@@ -1,0 +1,885 @@
+{
+	"common": {
+		"button": {
+			"confirm": "Confirm"
+		},
+		"dialog": {
+			"confirm": "Confirm"
+		},
+		"error": {
+			"assetNotFound": "Asset not found",
+			"loadPaymentDesc": "Load payment description",
+			"loadRedeemRules": "Load redemption rules",
+			"redeemRulesNotFound": "Redemption rules not found"
+		},
+		"label": {
+			"calendar": "Calendar",
+			"estimated": "Estimated",
+			"view": "View"
+		},
+		"message": {
+			"error": " Error",
+			"fail": " Failed",
+			"success": " Success",
+			"unknown": "Unknown Error"
+		},
+		"payment": {
+			"account": "Account:",
+			"bankName": "Bank:",
+			"bankTransfer": "Bank Transfer",
+			"payee": "Payee:",
+			"paymentDescription": "Payment Description",
+			"paymentMethod": "Payment Method"
+		},
+		"redeem": {
+			"includeIncome": "Including income {amount}",
+			"quantity": "Redemption Quantity",
+			"rules": "Redemption Rules"
+		},
+		"sms": {
+			"codeInputError": "Please enter 4-digit Code",
+			"codeSent": "Code sent",
+			"codeSentTo": "Code has been sent to your phone {phone}",
+			"codeSentWait": "Code sent, please wait",
+			"resendCountdown": "Resend in {time} seconds",
+			"sendButton": "Send Code",
+			"sendFailed": "Failed to send Code"
+		},
+		"unit": {
+			"indefinite": "Indefinite",
+			"months": "{count} month(s)",
+			"share": "Share"
+		}
+	},
+	"components": {
+		"assetProfitChart": {
+			"income": "Income",
+			"period1m": "Last 1 month",
+			"period3m": "Last 3 months",
+			"period6m": "Last 6 months",
+			"period7d": "Last 7 days",
+			"periodAll": "Since inception"
+		},
+		"assetStatistics": {
+			"estimatedIncome": "Including estimated cumulative income",
+			"holdQuantity": "Holding quantity",
+			"todayIncomeRate": "Estimated today income/rate",
+			"totalAmount": "Total Amount",
+			"totalAssets": "Total Assets",
+			"totalIncomeRate": "Estimated total income/rate"
+		},
+		"billCard": {
+			"actualAmount": "Actual Amount Received:",
+			"amount": "Amount:",
+			"applyTime": "Application time:",
+			"auditRemark": "Audit remark:",
+			"auditTime": "Platform confirmation time:",
+			"billNumber": "Bill No.:",
+			"billType": "Bill Type:",
+			"projectName": "Project Name:",
+			"quantity": "Quantity:"
+		},
+		"captchaButton": {
+			"codeSent": "Code sent",
+			"get": "Get",
+			"sendFailed": "Failed to send Code, please retry"
+		},
+		"compLoadMore": {
+			"loading": "Loading...",
+			"loadmore": "Load more",
+			"nomore": "No more"
+		},
+		"countryPhoneSelector": {
+			"search": "Search country name, code or dial code",
+			"selectCountry": "Select Country"
+		},
+		"loginHistoryCard": {
+			"loginCity": "Login city:",
+			"loginIp": "Login IP:",
+			"loginTime": "Login time:",
+			"loginType": "Login method:"
+		},
+		"messageCard": {
+			"read": "Read",
+			"unread": "Unread"
+		},
+		"orderCard": {
+			"account": "Account:",
+			"amount": "Amount:",
+			"auditRemark": "Audit remark:",
+			"chainAddress": "Chain address:",
+			"contractNo": "Contract No.:",
+			"estimatedTime": "Estimated purchase confirmation time:",
+			"orderNumber": "Order No.:",
+			"payType": "Payment method:",
+			"payVoucher": "Payment voucher:",
+			"payee": "Payee:",
+			"projectName": "Project Name:",
+			"submitTime": "Submit time:",
+			"subscribeQuantity": "Subscribe quantity:",
+			"view": "View"
+		},
+		"pdfPreview": {
+			"empty": "No Content",
+			"loadError": "PDF Load Error",
+			"loading": "Loading...",
+			"nextPage": "Next",
+			"pageInfo": "{current} / {total}",
+			"prevPage": "Previous"
+		},
+		"projectCard": {
+			"expectedReturn": "Expected annual return",
+			"issuePrice": "Issue unit price",
+			"remainingQuantity": "Remaining quantity (shares)"
+		},
+		"userVerify": {
+			"auditPending": "Investor verification under review",
+			"subtitle": "Complete identity verification to start your {rwa} investment journey",
+			"verify": "Investor verification",
+			"welcome": "Welcome to SUN Private Fund"
+		}
+	},
+	"error": {
+		"10001": "Audit not found",
+		"10002": "User authentication already passed, cannot resubmit",
+		"10003": "User already bound 2FA authentication",
+		"10004": "2FA not initialized",
+		"10005": "2FA Code error",
+		"10006": "2FA not enabled",
+		"10007": "Phone number does not match",
+		"10008": "File upload failed",
+		"10009": "File size exceeds limit",
+		"10010": "Please provide rejection reason",
+		"10011": "Bank account name does not match ID name",
+		"10012": "Login failed, incorrect username or password",
+		"10013": "Login failed, account is disabled",
+		"10014": "User does not exist",
+		"10015": "Phone number already in use",
+		"10016": "Phone number cannot be empty",
+		"20001": "User does not exist",
+		"30001": "Bank does not exist",
+		"30002": "Bank card audit status invalid",
+		"40001": "User login log does not exist",
+		"50001": "Message template does not exist",
+		"50002": "User message does not exist",
+		"50003": "User message read status does not exist",
+		"50100": "Project not found",
+		"50101": "Project not on sale",
+		"50102": "Project sold out",
+		"50103": "Insufficient stock",
+		"50104": "Purchase quantity below minimum",
+		"50105": "Invalid wallet address format",
+		"50106": "Project information does not exist",
+		"50107": "Project status does not allow changing sale status (only unsold and on-sale status can be changed)",
+		"50108": "Publisher bank information does not exist",
+		"50200": "Order not found",
+		"50201": "Order status is not pending payment",
+		"50202": "Order expired",
+		"50203": "Order does not belong to current user",
+		"50204": "Code error",
+		"50205": "Payment voucher upload failed",
+		"50206": "Order status is not under review",
+		"50207": "Reason must be provided when rejecting",
+		"50208": "Files must be uploaded when approving",
+		"50300": "Order balance does not exist",
+		"50301": "Order balance does not belong to current user",
+		"50302": "Insufficient balance",
+		"50303": "Insufficient holding quantity",
+		"50304": "Project not matured, cannot redeem at maturity",
+		"50305": "Dividend amount exceeds available amount",
+		"50306": "No available bank card",
+		"50307": "Order balance query time range cannot exceed 90 days",
+		"50400": "Bill does not exist",
+		"50401": "Bill is not pending review",
+		"50402": "Bill is not approved",
+		"50403": "Bill already has payment voucher uploaded",
+		"50404": "Reason must be provided when rejecting",
+		"50405": "Bill status changed, please refresh and retry",
+		"60001": "System agreement does not exist",
+		"70001": "User chain address does not exist",
+		"70002": "Chain address does not exist",
+		"70003": "Chain address already bound",
+		"70004": "Chain address not bound",
+		"70005": "Signature verification failed",
+		"70006": "Cannot unbind in this status",
+		"70007": "Cannot perform operation in this status",
+		"102004": "Code incorrect, reason: {}",
+		"102005": "Account not bound, binding required",
+		"102007": "Phone number does not exist",
+		"102008": "Code incorrect, reason: {}",
+		"1004005001": "File size exceeds limit"
+	},
+	"options": {
+		"agreementKey": {
+			"buy": "Subscription Agreement",
+			"privacy": "Privacy Protection Agreement",
+			"register": "Registration Agreement",
+			"service": "User Service Agreement"
+		},
+		"assetStatus": {
+			"approved": "Approved",
+			"confirming": "Confirming",
+			"ended": "Ended",
+			"profitting": "Profitting",
+			"redeemable": "Redeemable",
+			"rejected": "Pending Income"
+		},
+		"assetType": {
+			"digital": "Digital Asset",
+			"physical": "Physical Asset"
+		},
+		"auditStatus": {
+			"all": "All",
+			"auditPassed": "Audit Passed",
+			"auditRejected": "Audit Rejected",
+			"payed": "Paid",
+			"pendingAudit": "Pending Audit"
+		},
+		"billType": {
+			"dividend": "Dividend",
+			"earlyRedemption": "Early Redemption",
+			"maturityRedemption": "Maturity Redemption"
+		},
+		"chainStatus": {
+			"binding": "Binding",
+			"success": "Normal",
+			"unbind": "Unbound",
+			"unbinding": "Unbinding"
+		},
+		"currency": {
+			"cny": "CNY",
+			"hkd": "HKD",
+			"usd": "USD",
+			"usdt": "USDT"
+		},
+		"fontSize": {
+			"extraLarge": "Extra Large",
+			"large": "Large",
+			"standard": "Standard"
+		},
+		"loginType": {
+			"password": "Password Login",
+			"sms": "SMS Login"
+		},
+		"orderStatus": {
+			"all": "All",
+			"auditPassed": "Audit Passed",
+			"auditRejected": "Audit Rejected",
+			"auditing": "Auditing",
+			"cancelled": "Cancelled",
+			"pendingPayment": "Pending Payment",
+			"redeemed": "Redeemed"
+		},
+		"payType": {
+			"bank": "Bank Transfer"
+		},
+		"projectState": {
+			"dividend": "Dividend",
+			"lockPeriod": "Lock Period",
+			"redeem": "Redeem",
+			"sold": "Sold Out",
+			"subscription": "Subscription"
+		},
+		"projectStatus": {
+			"notStarted": "Not Started",
+			"onSale": "On Sale",
+			"profitable": "Profitable",
+			"soldOut": "Sold Out"
+		},
+		"projectType": {
+			"closed": "Closed",
+			"open": "Open"
+		},
+		"twoFactorAuthStatus": {
+			"disabled": "Disabled",
+			"enabled": "Enabled",
+			"pendingVerification": "Pending Verification",
+			"unbinding": "Unbinding"
+		}
+	},
+	"pages": {
+		"about": {
+			"section1": {
+				"content1": "This platform is an information disclosure and investment management platform for Real World Assets (RWA) targeting qualified investors (Professional Investor / Accredited Investor). Through a digital system, the platform centralizes, structures, and continuously updates investment information related to real assets, assisting investors in asset allocation and investment decisions within a compliant framework.",
+				"content2": "The platform does not constitute any form of investment offer, solicitation, or advice, nor does it directly promise any investment returns. All investment decisions should be made by investors based on their own judgment and in accordance with formally signed legal documents.",
+				"title": "I. Platform Positioning and Objectives"
+			},
+			"section2": {
+				"subsection1": {
+					"bullet1": "Energy and power-related assets",
+					"bullet2": "Digital infrastructure and computing power assets",
+					"bullet3": "Mining, resources and related revenue rights",
+					"bullet4": "Real estate and other assets with cash flow characteristics",
+					"bullet5": "Project and asset basic information",
+					"bullet6": "Investment term, scale and structure",
+					"bullet7": "Revenue distribution mechanism (if applicable)",
+					"bullet8": "Identified major risk factors",
+					"bullet9": "Related legal documents and third-party materials",
+					"content1": "The asset products displayed on the platform are all based on underlying assets in the real world, including but not limited to:",
+					"content2": "For each asset product, the platform provides structured information disclosure, including:",
+					"content3": "All information is sourced from project parties, custodian institutions, or third-party professional institutions. The platform makes no guarantee regarding the completeness or accuracy of such information.",
+					"title": "1. Real Asset Information Disclosure"
+				},
+				"title": "II. Applicable Regulatory Framework"
+			},
+			"section3": {
+				"subsection1": {
+					"bullet1": "Energy and power-related assets",
+					"bullet2": "Digital infrastructure and computing power assets",
+					"bullet3": "Mining, resources and related revenue rights",
+					"bullet4": "Real estate and other assets with cash flow characteristics",
+					"bullet5": "Project and asset basic information",
+					"bullet6": "Investment term, scale and structure",
+					"bullet7": "Revenue distribution mechanism (if applicable)",
+					"bullet8": "Identified major risk factors",
+					"bullet9": "Related legal documents and third-party materials",
+					"content1": "The asset products displayed on the platform are all based on underlying assets in the real world, including but not limited to:",
+					"content2": "For each asset product, the platform provides structured information disclosure, including:",
+					"content3": "All information is sourced from project parties, custodian institutions, or third-party professional institutions. The platform makes no guarantee regarding the completeness or accuracy of such information.",
+					"title": "1. Real Asset Information Disclosure"
+				},
+				"title": "III. Core Functions Overview"
+			}
+		},
+		"bill": {
+			"list": {
+				"orderFilterTip": "Only showing bills for order {orderId}"
+			}
+		},
+		"login": {
+			"button": {
+				"emailLogin": "Email Login",
+				"login": "Login",
+				"mobileLogin": "Mobile Login",
+				"register": "Register",
+				"switchToCode": "Login by Code",
+				"switchToPassword": "Login by Password"
+			},
+			"form": {
+				"codeError": "Please enter the Code",
+				"codeLabel": "Code",
+				"codePlaceholder": "Please enter the Code",
+				"emailError": "Please enter email",
+				"emailFormatError": "Invalid email format",
+				"emailLabel": "Email",
+				"emailPlaceholder": "Please enter email",
+				"passwordError": "Please enter your password",
+				"passwordLabel": "Password",
+				"passwordPlaceholder": "Your password (6-12 digits + letters)",
+				"phoneError": "Please enter your phone number",
+				"phoneFormatError": "Invalid phone number format",
+				"phoneLabel": "Phone",
+				"phonePlaceholder": "Enter phone number",
+				"title": "Welcome to login"
+			},
+			"message": {
+				"agreeRequired": "Please agree to the protocol first",
+				"loggingIn": "Logging in",
+				"loginFailed": "Login failed, please try again",
+				"loginSuccess": "Login successful"
+			}
+		},
+		"message": {
+			"detail": {
+				"notFound": "Message not found",
+				"order": "Order",
+				"viewAddress": "View Address:",
+				"viewOrder": "View Order:"
+			}
+		},
+		"order": {
+			"checkout": {
+				"account": "Account:",
+				"applyDividend": "Apply for Current Dividend",
+				"applySuccess": "Dividend application successful",
+				"arrivalTime": "Arrival Time:",
+				"arrivalTimeValue": "28 days after platform confirmation",
+				"confirmApplyDividend": "Confirm Apply for Dividend",
+				"dividendAmount": "Dividend Amount",
+				"estimated": "Estimated",
+				"inputCodeTitle": "Enter Code",
+				"loadPaymentDescError": "Load payment description",
+				"payee": "Payee:",
+				"paymentDescription": "Payment Description",
+				"paymentMethod": "Payment Method"
+			},
+			"detail": {
+				"applyDividend": "Apply for Current Dividend",
+				"contactService": "Contact Service",
+				"earlyRedeem": "Early Redemption",
+				"fullRedeem": "Full Redemption",
+				"viewBill": "View Bill"
+			},
+			"earlyRedeem": {
+				"account": "Account:",
+				"applyEarlyRedeem": "Apply for Early Redemption",
+				"applySuccess": "Early redemption application successful",
+				"confirmApplyRedeem": "Confirm Early Redemption",
+				"estimated": "Estimated",
+				"estimatedRedeemAmount": "Estimated Redemption Amount:",
+				"fee": "Fee:",
+				"includeIncome": "Including income {amount}",
+				"inputCodeTitle": "Enter Code",
+				"loadPaymentDescError": "Load payment description",
+				"loadRedeemRulesError": "Load redemption rules",
+				"minimumStart": "Minimum {quantity} shares",
+				"payee": "Payee:",
+				"paymentDescription": "Payment Description",
+				"paymentMethod": "Payment Method",
+				"redeemQuantity": "Redemption Quantity",
+				"redeemRules": "Redemption Rules",
+				"redeemRulesNotFound": "Redemption rules not found",
+				"view": "View"
+			},
+			"index": {
+				"cumulativeIncome": "Cumulative Income/Rate",
+				"goInvest": "Go Invest",
+				"loginRegister": "Register/Login",
+				"noInvestment": "You have not invested in any projects yet, please go to the market to purchase",
+				"projectName": "Project Name",
+				"status": "Status",
+				"totalAmount": "Total Amount"
+			},
+			"individualProfit": {
+				"calendar": "Calendar",
+				"filterTip": "Only showing income for order {orderId}",
+				"noRecord": "No profit records",
+				"profitDetails": "Profit Details",
+				"profitRate": "Profit/Rate"
+			},
+			"pay": {
+				"account": "Account:",
+				"clear": "Clear",
+				"contractNo": "Contract Number",
+				"contractNoPlaceholder": "Please enter the contract number of the offline signed contract",
+				"countdownAlert": "Please complete payment within {time}, otherwise the order will be automatically cancelled",
+				"enterContractNo": "Please enter contract number",
+				"estimatedConfirmTime": "Estimated Purchase Confirmation Time",
+				"loadPaymentInfoError": "Load payment information",
+				"orderNotFound": "Order not found",
+				"payee": "Payee:",
+				"paymentCompleted": "I have completed payment",
+				"paymentTitle": "Please pay to the receiving account below and upload the payment voucher. After platform confirmation, the corresponding assets will be transferred to your chain address",
+				"paymentVoucher": "Payment Voucher",
+				"purchaseQuantity": "Purchase Quantity",
+				"remark": "Note: Platform confirmation does not mean project launch. The project will be launched after fund raising is completed. If it fails to launch, your funds will be returned",
+				"submitPayment": "Submit Payment",
+				"submitSuccess": "Payment information submitted",
+				"upload": "Upload",
+				"uploadVoucher": "Please upload payment voucher"
+			},
+			"popup": {
+				"availableDividend": "Available Dividend",
+				"dividendAmount": "Dividend Amount",
+				"dividendAmountError": "Please enter valid dividend amount",
+				"dividendAmountExceed": "Dividend amount cannot exceed {amount}",
+				"dividendAmountPlaceholder": "Please enter dividend amount",
+				"earlyRedeemButton": "Redeem All Early",
+				"earlyRedeemMessage": "Early redemption will incur high fees",
+				"earlyRedeemTitle": "Early Redemption Rules",
+				"redeemAmount": "Redemption Amount",
+				"redeemButton": "Confirm Redemption",
+				"redeemTitle": "Redeem All",
+				"requestDividendButton": "Confirm Request",
+				"requestDividendTitle": "Request Dividend"
+			},
+			"profit": {
+				"calendar": "Calendar",
+				"noRecord": "No profit records",
+				"profitDetails": "Profit Details",
+				"profitRate": "Profit/Rate"
+			},
+			"redeem": {
+				"account": "Account:",
+				"applyRedeem": "Apply for Redemption",
+				"confirmRedeem": "Confirm Redemption",
+				"estimated": "Estimated",
+				"includeIncome": "Including income {amount}",
+				"inputCode": "Enter Code",
+				"loadPaymentDescError": "Load payment description",
+				"loadRedeemRulesError": "Load redemption rules",
+				"payee": "Payee:",
+				"paymentDescription": "Payment Description",
+				"paymentMethod": "Payment Method",
+				"redeemQuantity": "Redemption Quantity",
+				"redeemRules": "Redemption Rules",
+				"redeemRulesNotFound": "Redemption rules not found",
+				"redeemSuccess": "Redemption successful",
+				"view": "View"
+			}
+		},
+		"project": {
+			"buy": {
+				"bindAddress": "Bind",
+				"buyButton": "Buy",
+				"chainAddress": "Chain Address",
+				"completePayment": "Please complete payment",
+				"minimumStart": "Minimum {quantity} shares",
+				"notInSubscription": "Not in subscription period",
+				"purchaseInstructions": "Purchase Instructions",
+				"purchaseQuantity": "Purchase Quantity",
+				"remark": "Note: Platform confirmation does not mean project launch. The project will be launched after fund raising is completed. If it fails to launch, your funds will be returned",
+				"selectChainAddress": "Please select",
+				"view": "View"
+			},
+			"components": {
+				"orderContract": {
+					"noContracts": "No Purchase Contracts"
+				},
+				"popupChainAddress": {
+					"title": "Select Chain Address"
+				},
+				"popupConfirmProjectBuy": {
+					"agreeRequired": "Please agree to the protocol",
+					"confirmBuy": "Confirm Purchase"
+				},
+				"popupNoticeDetail": {
+					"attachments": "Attachments",
+					"content": "Content",
+					"noticeNo": "Notice No.:",
+					"publishTime": "Publish Time:"
+				},
+				"projectDetailBuy": {
+					"customerService": "Contact",
+					"insufficientQuantity": "Insufficient remaining quantity",
+					"notInSubscription": "Not in subscription period",
+					"notVerified": "User has not completed investor verification. Unable to purchase. Go to verification?",
+					"projectShare": "Project Share",
+					"share": "Share"
+				},
+				"projectDetailDocument": {
+					"loadFailed": "Load failed, please retry",
+					"loading": "Loading...",
+					"noMaterials": "No project materials",
+					"viewAfterLogin": "View after login"
+				},
+				"projectDetailInfo": {
+					"dividendRules": "Dividend Rules",
+					"fundDuration": "Fund Duration",
+					"issueChain": "Issue Chain",
+					"issueQuantity": "Issue Quantity",
+					"minimumPurchase": "Minimum Purchase",
+					"projectName": "Project Name",
+					"projectType": "Project Type",
+					"publisher": "Publisher",
+					"redemptionRules": "Redemption Rules"
+				},
+				"projectDetailIntroduction": {
+					"noIntroduction": "No project introduction"
+				},
+				"projectDetailNews": {
+					"noNotices": "No notices"
+				},
+				"projectInfo": {
+					"issuanceInfo": "Issue Info",
+					"notices": "Notices",
+					"projectIntroduction": "Project Intro",
+					"projectMaterials": "Project Docs",
+					"purchaseContracts": "Contracts"
+				},
+				"projectSwitcher": {
+					"all": "All",
+					"noProjects": "No related projects"
+				},
+				"protocolConfirm": {
+					"agreeText": "I have read and agree to"
+				}
+			},
+			"detail": {
+				"expectedAnnualReturn": "Expected Annual Return",
+				"issueUnitPrice": "Issue Unit Price",
+				"remainingQuantity": "Remaining Quantity"
+			},
+			"index": {
+				"feature1Content1": "Connecting Hong Kong Web3 and Financial Regulatory Environment",
+				"feature1Content2": "Supporting Licensed Entities and Compliant Issuance Structure",
+				"feature1Content3": "Compatible with KYC / KYB / AML / Investor Suitability Management",
+				"feature2Content1": "One Asset One Structure, One Asset One Contract",
+				"feature2Content2": "Clear Asset Source, Ownership and Revenue Logic",
+				"feature2Content3": "Supporting Multiple Types of RWA including Computing Power, Energy, Carbon Assets, Receivables, and Cultural Assets",
+				"feature3Content1": "RWA Asset Modeling Engine",
+				"feature3Content2": "Compliant Tokenization Issuance Module",
+				"feature3Content3": "On-chain Revenue Distribution and Settlement System",
+				"feature3Content4": "RWA Lifecycle Management (Issuance / Holding / Transfer / Exit)",
+				"hongKongCompliance": "Hong Kong Compliance First",
+				"modularInfrastructure": "Modular RWA Infrastructure",
+				"realAssets": "Real Assets, Real Mapping",
+				"registerLogin": "Register/Login",
+				"slogan": "Connecting Real Assets to Global Markets",
+				"subTitle": "Connecting Value Globally",
+				"welcomeTitle": "Welcome to SUN Private Fund",
+				"welcomeTitleRWA": "Welcome to Gaoge RWA",
+				"whyChoose": "Why Choose SUN Private Fund?",
+				"whyChooseRWA": "Why Choose Gaoge RWA?"
+			}
+		},
+		"protocol": {
+			"detail": {
+				"loadError": "Failed to load protocol details",
+				"loading": "Loading..."
+			},
+			"list": {
+				"loadError": "Failed to load protocol list"
+			}
+		},
+		"register": {
+			"button": {
+				"emailRegister": "Email Registration",
+				"goLogin": "Already have an account? Login",
+				"mobileRegister": "Mobile Registration",
+				"register": "Register"
+			},
+			"form": {
+				"codeError": "Please enter the Code",
+				"codeLabel": "Code",
+				"codePlaceholder": "Please enter the Code",
+				"confirmPasswordError": "Please enter your password again",
+				"confirmPasswordLabel": "Re-Password",
+				"confirmPasswordMismatch": "The passwords do not match",
+				"confirmPasswordPlaceholder": "Please enter your password again",
+				"passwordError": "Please enter your password",
+				"passwordLabel": "Password",
+				"passwordLengthError": "Password length must be 6-12 characters",
+				"passwordPlaceholder": "Your password (6-12 digits + letters)",
+				"phoneError": "Please enter your phone number",
+				"phoneLabel": "Phone",
+				"phonePlaceholder": "Enter phone number"
+			},
+			"message": {
+				"agreeRequired": "Please agree to the protocol first",
+				"registerFailed": "Registration failed, please try again",
+				"registerSuccess": "Registration successful",
+				"registering": "Registering"
+			}
+		},
+		"user": {
+			"auth": {
+				"bankCard": "Bank Card",
+				"bankFlow": "Bank Statement",
+				"edit": "Edit",
+				"editBankInfo": "Edit Bank Card Information",
+				"idCard": "ID Card",
+				"phone": "Contact Phone",
+				"qualification": "Professional Qualification",
+				"reason": "Reason:",
+				"residenceProof": "Proof of Residence",
+				"submitAudit": "Submit for Review",
+				"submitTime": "Submit Time:"
+			},
+			"bind": {
+				"email": "Email Address",
+				"emailLabel": "Email Address",
+				"emailPlaceholder": "Please enter email address",
+				"fail": "Bind failed",
+				"mailCodeLabel": "Email Code",
+				"mailCodePlaceholder": "Please enter email code",
+				"mobile": "Mobile Number",
+				"mobileLabel": "Mobile Number",
+				"mobilePlaceholder": "Please enter mobile number",
+				"smsCodeLabel": "Code",
+				"smsCodePlaceholder": "Please enter Code",
+				"success": "Bind Success",
+				"titleEmail": "Bind Email",
+				"titleMobile": "Bind Mobile"
+			},
+			"bindChainAddress": {
+				"bindSuccess": "Submit Bind Chain Address Successful",
+				"confirmButton": "Confirm Bind",
+				"connectButton": "Connect Wallet",
+				"connectError": "Failed to connect wallet",
+				"connectPrompt": "Please connect your wallet",
+				"connectedAddress": "Connected Address",
+				"getSignatureFailed": "Failed to get signature",
+				"messageError": "Failed to get signature message",
+				"notConnected": "Please connect wallet first",
+				"submitBindFailed": "Failed to submit bind",
+				"switch": "Switch",
+				"switchError": "Failed to switch address",
+				"title": "Bind Chain Address"
+			},
+			"chainAddress": {
+				"confirmUnbind": "Confirm Unbind",
+				"empty": "No Chain Address",
+				"unbindFailed": "Unbind Failed",
+				"unbindMessage": "Are you sure to unbind chain address {address}?",
+				"unbindSuccess": "Unbind Successful"
+			},
+			"currency": {
+				"setError": "Failed to set, please try again",
+				"title": "Select Currency"
+			},
+			"fontSize": {
+				"title": "Font Size"
+			},
+			"index": {
+				"loginRegister": "Register/Login",
+				"logout": "Logout",
+				"menu": {
+					"about": "About Us",
+					"address": "Chain Address",
+					"audit": "Identity Verification",
+					"bill": "My Bills",
+					"bindEmail": "Bind Email",
+					"bindMobile": "Bind Mobile",
+					"contact": "Contact Service",
+					"currency": "Currency",
+					"fontSize": "Font Size",
+					"history": "Login History",
+					"language": "Language",
+					"order": "My Orders",
+					"password": "Account Password",
+					"protocol": "Platform Agreement",
+					"twofa": "Two-Factor Authentication",
+					"viewBind": "View Binding"
+				}
+			},
+			"language": {
+				"title": "Switch Language"
+			},
+			"loginPassword": {
+				"confirmPassword": "Confirm New Password",
+				"confirmPasswordError": "Please confirm new password",
+				"emailCode": "Email Code",
+				"newPassword": "New Password",
+				"newPasswordError": "Please enter new password",
+				"passwordLengthError": "Password must be at least 6 characters",
+				"passwordMismatch": "Passwords do not match",
+				"resetButton": "Reset Password",
+				"resetSuccess": "Password Reset Successful",
+				"smsCode": "SMS Code",
+				"verificationCode": "Code"
+			},
+			"password": {
+				"loginPassword": "Login Password ******"
+			},
+			"twofa": {
+				"codeError": "Invalid Code or Verification Failed",
+				"confirmUnbind": "Confirm to unbind 2FA?",
+				"rebind": "Rebind",
+				"title": "Two-Factor Authentication",
+				"unbind": "Unbind",
+				"verify": "Verify",
+				"verifyAndBind": "Verify and Bind",
+				"verifyFailed": "2FA Verification Failed",
+				"verifySuccess": "2FA Verification Successful"
+			},
+			"verify": {
+				"account": "Account",
+				"accountName": "Account Name",
+				"accountNamePlaceholder": "Please enter account name",
+				"accountPlaceholder": "Please enter account",
+				"agreeRequired": "Please agree to the agreement",
+				"bankCardGroup": "Bank Card",
+				"bankFlow": "Bank Statement",
+				"bankFlowNote": "(Please upload jpg or png format, max 6 files, each not exceeding {size})",
+				"bankName": "Bank",
+				"bankNamePlaceholder": "Please enter bank name",
+				"expireDate": "Expiration Date",
+				"expireDatePlaceholder": "Please select your certificate expiration date",
+				"formatNote": "(Please upload jpg or png format)",
+				"idCardBack": "Upload ID Card Back (National Emblem Side)",
+				"idCardFront": "Upload ID Card Front (Portrait Side)",
+				"idCardNumber": "ID Card Number",
+				"idCardNumberPlaceholder": "Please enter your ID card number",
+				"loadError": "Failed to load information",
+				"phonePlaceholder": "Please enter contact phone",
+				"qualification": "Investment Qualification",
+				"qualificationNote": "(Please upload jpg or png format, max 6 files, each not exceeding {size})",
+				"realName": "Full Name",
+				"realNamePlaceholder": "Please enter your full name",
+				"recognize": "Recognize",
+				"recognizing": "Recognizing...",
+				"residenceProof": "Proof of Residence",
+				"residenceProofNote": "(Please upload jpg or png format, max 6 files, each not exceeding {size})",
+				"submitButton": "Submit Authentication Application",
+				"uploadIdCard": "Upload ID Card"
+			},
+			"verifySubmitted": {
+				"home": "Back to Home",
+				"message": "Authentication application submitted, please wait for review"
+			}
+		}
+	},
+	"popup": {
+		"bind2fa": {
+			"codeInputHint": "Please enter 6-digit code",
+			"confirmBtn": "Confirm Binding",
+			"errorMsg": "Invalid code or binding failed",
+			"failMsg": "2FA binding failed",
+			"successMsg": "2FA binding successful",
+			"title": "Bind Two-Factor Authentication",
+			"verifyCodeHint": "Please enter the 6-digit code from your authenticator"
+		},
+		"contactService": {
+			"copyHint": "Click to copy",
+			"email": "Email",
+			"title": "Contact Service",
+			"wechat": "WeChat"
+		},
+		"editUserInfo": {
+			"avatar": "Avatar",
+			"nickname": "Nickname",
+			"nicknameHint": "Please enter nickname",
+			"saveBtn": "Save",
+			"successMsg": "User info updated",
+			"title": "Edit User Info",
+			"uploadHint": "Click to upload avatar"
+		},
+		"initBind2fa": {
+			"addBtn": "To Authenticator",
+			"copyBtn": "Copy Secret",
+			"initFailMsg": "2FA initialization failed",
+			"title": "Bind Two-Factor Authentication",
+			"verifyBtn": "Verify Binding"
+		},
+		"input2fa": {
+			"codeInputHint": "Please enter 6-digit code",
+			"confirmBtn": "Confirm",
+			"title": "Enter Two-Factor Code",
+			"verifyCodeHint": "Please enter the 6-digit code from your authenticator"
+		},
+		"inputCode": {
+			"codeInputHint": "Please enter 4-digit code",
+			"confirmBtn": "Confirm",
+			"emailCodeSentHint": "Code sent to {email}",
+			"getCodeBtn": "Get Code",
+			"getEmailCodeBtn": "Get Email Code",
+			"getSmsCodeBtn": "Get SMS Code",
+			"smsCodeSentHint": "Code sent to {phone}",
+			"switchToEmail": "Switch to Email",
+			"switchToSms": "Switch to SMS",
+			"title": "Enter Code",
+			"twoFactorHint": "Please enter 6-digit 2FA code"
+		},
+		"protocol": {
+			"loadFailMsg": "Load Agreement",
+			"loadingMsg": "Loading...",
+			"title": "Agreement Details"
+		},
+		"share": {
+			"copiedMsg": "Copied to clipboard",
+			"copyLink": "Copy Link",
+			"failMsg": "Share failed",
+			"title": "Share to"
+		},
+		"unbind2fa": {
+			"codeInputHint": "Please enter 4-digit code",
+			"codeSentMsg": "Code sent, please wait",
+			"codeSentSuccessMsg": "Code sent",
+			"confirmBtn": "Confirm Unbinding",
+			"countdownMsg": "Resend in {time}s",
+			"errorMsg": "Invalid code or unbinding failed",
+			"failMsg": "2FA unbinding failed",
+			"sendCodeBtn": "Send Code",
+			"successMsg": "2FA unbinding successful"
+		},
+		"userVerifyConfirm": {
+			"codeInputHint": "Please enter 4-digit code",
+			"confirmBtn": "Confirm",
+			"countdownMsg": "Resend in {time}s",
+			"sendCodeBtn": "Send Code",
+			"smsCodeSentHint": "Code sent to {phone}",
+			"title": "Send Code"
+		}
+	}
+}

@@ -1,0 +1,885 @@
+{
+	"common": {
+		"button": {
+			"confirm": "确认"
+		},
+		"dialog": {
+			"confirm": "确认"
+		},
+		"error": {
+			"assetNotFound": "资产不存在",
+			"loadPaymentDesc": "加载支付说明",
+			"loadRedeemRules": "加载赎回规则",
+			"redeemRulesNotFound": "赎回规则不存在"
+		},
+		"label": {
+			"calendar": "日历",
+			"estimated": "预估",
+			"view": "查看"
+		},
+		"message": {
+			"error": "错误",
+			"fail": "失败",
+			"success": "成功",
+			"unknown": "未知错误"
+		},
+		"payment": {
+			"account": "账户：",
+			"bankName": "开户行：",
+			"bankTransfer": "银行转账",
+			"payee": "收款方：",
+			"paymentDescription": "支付说明",
+			"paymentMethod": "支付方式"
+		},
+		"redeem": {
+			"includeIncome": "包含收益 {amount}",
+			"quantity": "赎回份额",
+			"rules": "赎回规则"
+		},
+		"sms": {
+			"codeInputError": "请输入4位验证码",
+			"codeSent": "验证码已发送",
+			"codeSentTo": "已向您{phone}的手机号发送验证码",
+			"codeSentWait": "验证码已发送，请稍候",
+			"resendCountdown": "{time}秒后重新发送",
+			"sendButton": "发送验证码",
+			"sendFailed": "发送验证码失败"
+		},
+		"unit": {
+			"indefinite": "无限期",
+			"months": "{count}月",
+			"share": "份"
+		}
+	},
+	"components": {
+		"assetProfitChart": {
+			"income": "收益",
+			"period1m": "近1月",
+			"period3m": "近3月",
+			"period6m": "近6月",
+			"period7d": "近7日",
+			"periodAll": "成立以来"
+		},
+		"assetStatistics": {
+			"estimatedIncome": "含预估累计收益",
+			"holdQuantity": "持有份额",
+			"todayIncomeRate": "预估今日收益/率",
+			"totalAmount": "总金额",
+			"totalAssets": "总资产",
+			"totalIncomeRate": "预估总收益/率"
+		},
+		"billCard": {
+			"actualAmount": "实际到账：",
+			"amount": "金额：",
+			"applyTime": "申请时间：",
+			"auditRemark": "审核备注：",
+			"auditTime": "平台确认时间：",
+			"billNumber": "流水号：",
+			"billType": "账单类型：",
+			"projectName": "项目名称：",
+			"quantity": "份额："
+		},
+		"captchaButton": {
+			"codeSent": "验证码已发送",
+			"get": "获取",
+			"sendFailed": "发送验证码失败，请重试"
+		},
+		"compLoadMore": {
+			"loading": "加载中...",
+			"loadmore": "加载更多",
+			"nomore": "没有更多了"
+		},
+		"countryPhoneSelector": {
+			"search": "搜索国家名称、代码或区号",
+			"selectCountry": "选择国家"
+		},
+		"loginHistoryCard": {
+			"loginCity": "登录城市：",
+			"loginIp": "登录IP：",
+			"loginTime": "登录时间：",
+			"loginType": "登录方式："
+		},
+		"messageCard": {
+			"read": "已读",
+			"unread": "未读"
+		},
+		"orderCard": {
+			"account": "账户：",
+			"amount": "金额：",
+			"auditRemark": "审核备注：",
+			"chainAddress": "链地址：",
+			"contractNo": "合同号：",
+			"estimatedTime": "预计购买确认时间：",
+			"orderNumber": "订单号：",
+			"payType": "支付方式：",
+			"payVoucher": "支付凭证：",
+			"payee": "收款方：",
+			"projectName": "项目名称：",
+			"submitTime": "提交时间：",
+			"subscribeQuantity": "购入份额：",
+			"view": "查看"
+		},
+		"pdfPreview": {
+			"empty": "暂无内容",
+			"loadError": "PDF加载错误",
+			"loading": "加载中...",
+			"nextPage": "下一页",
+			"pageInfo": "{current} / {total}",
+			"prevPage": "上一页"
+		},
+		"projectCard": {
+			"expectedReturn": "预期年化收益",
+			"issuePrice": "发行单价",
+			"remainingQuantity": "剩余数量（份）"
+		},
+		"userVerify": {
+			"auditPending": "投资者认证审核中",
+			"subtitle": "完成身份认证，开启您的{rwa}投资之旅",
+			"verify": "投资者认证",
+			"welcome": "欢迎成为阳光基金用户"
+		}
+	},
+	"error": {
+		"10001": "审核不存在",
+		"10002": "用户认证已通过，无法重复提交",
+		"10003": "用户已绑定2FA认证",
+		"10004": "2FA未初始化",
+		"10005": "2FA验证码错误",
+		"10006": "2FA未开启",
+		"10007": "手机号不匹配",
+		"10008": "文件上传失败",
+		"10009": "文件大小超出限制",
+		"10010": "请填写驳回理由",
+		"10011": "银行账号名称与证件名称不一致",
+		"10012": "登录失败，账号密码不正确",
+		"10013": "登录失败，账号被禁用",
+		"10014": "用户不存在",
+		"10015": "手机号已经被使用",
+		"10016": "手机号不能为空",
+		"20001": "用户不存在",
+		"30001": "银行不存在",
+		"30002": "银行卡审核状态无效",
+		"40001": "用户登录日志不存在",
+		"50001": "消息模板不存在",
+		"50002": "用户消息不存在",
+		"50003": "用户消息已读不存在",
+		"50100": "项目不存在",
+		"50101": "项目未在售",
+		"50102": "项目已售罄",
+		"50103": "库存不足",
+		"50104": "购买数量低于起购量",
+		"50105": "钱包地址格式无效",
+		"50106": "项目信息不存在",
+		"50107": "项目状态不允许修改上下架状态（只有未开售和出售中状态才能修改）",
+		"50108": "发行商银行信息不存在",
+		"50200": "订单不存在",
+		"50201": "订单状态不是待支付",
+		"50202": "订单已过期",
+		"50203": "订单不属于当前用户",
+		"50204": "验证码错误",
+		"50205": "支付凭证上传失败",
+		"50206": "订单状态不是审核中",
+		"50207": "审核不通过时必须填写原因",
+		"50208": "审核通过时必须上传文件",
+		"50300": "订单余额不存在",
+		"50301": "订单余额不属于当前用户",
+		"50302": "余额不足",
+		"50303": "持有份额不足",
+		"50304": "项目未到期，不能进行到期赎回",
+		"50305": "分红金额超过可提取金额",
+		"50306": "没有可用银行卡",
+		"50307": "订单余额查询时间范围不能超过90天",
+		"50400": "账单不存在",
+		"50401": "账单不是待审核状态",
+		"50402": "账单不是审核通过状态",
+		"50403": "账单已上传支付凭证",
+		"50404": "审核不通过时必须填写原因",
+		"50405": "账单状态已变更，请刷新后重试",
+		"60001": "系统协议表不存在",
+		"70001": "用户链地址表不存在",
+		"70002": "链地址不存在",
+		"70003": "链地址已绑定",
+		"70004": "链地址未绑定",
+		"70005": "签名验证失败",
+		"70006": "该状态无法进行解绑",
+		"70007": "该状态下无法进行操作",
+		"102004": "验证码不正确，原因：{}",
+		"102005": "未绑定账号，需要进行绑定",
+		"102007": "手机号不存在",
+		"102008": "验证码不正确，原因：{}",
+		"1004005001": "文件大小超出限制"
+	},
+	"options": {
+		"agreementKey": {
+			"buy": "认购协议",
+			"privacy": "隐私保护协议",
+			"register": "注册协议",
+			"service": "用户服务协议"
+		},
+		"assetStatus": {
+			"approved": "审核通过",
+			"confirming": "确认中",
+			"ended": "已结束",
+			"profitting": "收益中",
+			"redeemable": "可赎回",
+			"rejected": "待收益"
+		},
+		"assetType": {
+			"digital": "数字资产",
+			"physical": "实体资产"
+		},
+		"auditStatus": {
+			"all": "全部",
+			"auditPassed": "审核通过",
+			"auditRejected": "审核未通过",
+			"payed": "已支付",
+			"pendingAudit": "待审核"
+		},
+		"billType": {
+			"dividend": "分红",
+			"earlyRedemption": "提前赎回",
+			"maturityRedemption": "到期赎回"
+		},
+		"chainStatus": {
+			"binding": "绑定中",
+			"success": "正常",
+			"unbind": "已解绑",
+			"unbinding": "解绑中"
+		},
+		"currency": {
+			"cny": "人民币",
+			"hkd": "港币",
+			"usd": "美元",
+			"usdt": "USDT"
+		},
+		"fontSize": {
+			"extraLarge": "超大",
+			"large": "大",
+			"standard": "标准"
+		},
+		"loginType": {
+			"password": "密码登录",
+			"sms": "验证码登录"
+		},
+		"orderStatus": {
+			"all": "全部",
+			"auditPassed": "审核通过",
+			"auditRejected": "审核未通过",
+			"auditing": "审核中",
+			"cancelled": "已取消",
+			"pendingPayment": "待支付",
+			"redeemed": "已赎回"
+		},
+		"payType": {
+			"bank": "银行转账"
+		},
+		"projectState": {
+			"dividend": "分红期",
+			"lockPeriod": "锁定期",
+			"redeem": "赎回期",
+			"sold": "已售罄",
+			"subscription": "认购期"
+		},
+		"projectStatus": {
+			"notStarted": "未开售",
+			"onSale": "出售中",
+			"profitable": "盈利中",
+			"soldOut": "已售罄"
+		},
+		"projectType": {
+			"closed": "封闭型",
+			"open": "开放型"
+		},
+		"twoFactorAuthStatus": {
+			"disabled": "未开启",
+			"enabled": "已开启",
+			"pendingVerification": "待验证",
+			"unbinding": "解绑中"
+		}
+	},
+	"pages": {
+		"about": {
+			"section1": {
+				"content1": "本平台为面向合资格投资者（Professional Investor / Accredited Investor）的真实世界资产（Real World Assets, RWA）信息披露与投资管理平台。平台通过数字化系统，对真实资产相关的投资信息进行集中展示、结构化管理与持续更新，协助投资者在合规框架下进行资产配置与投资决策。",
+				"content2": "平台不构成任何形式的投资要约、招揽或建议，亦不直接承诺任何投资回报。所有投资决策应由投资者基于自身判断，并以正式签署的法律文件为准。",
+				"title": "一、平台定位与目标"
+			},
+			"section2": {
+				"subsection1": {
+					"bullet1": "能源与电力相关资产",
+					"bullet2": "数字基础设施与算力资产",
+					"bullet3": "矿业、资源及相关收益权",
+					"bullet4": "不动产及其他具有现金流属性的资产",
+					"bullet5": "项目及资产基本情况说明",
+					"bullet6": "投资期限、规模及结构",
+					"bullet7": "收益分配机制（如适用）",
+					"bullet8": "已识别的主要风险因素",
+					"bullet9": "相关法律文件与第三方资料",
+					"content1": "平台展示的资产产品，均基于真实世界中的底层资产，例如但不限于：",
+					"content2": "针对每一资产产品，平台提供结构化的信息披露，包括：",
+					"content3": "所有信息均来源于项目方、托管机构或第三方专业机构，平台不对其完整性或准确性作出保证。",
+					"title": "1. 真实资产信息披露"
+				},
+				"title": "二、适用监管框架"
+			},
+			"section3": {
+				"subsection1": {
+					"bullet1": "能源与电力相关资产",
+					"bullet2": "数字基础设施与算力资产",
+					"bullet3": "矿业、资源及相关收益权",
+					"bullet4": "不动产及其他具有现金流属性的资产",
+					"bullet5": "项目及资产基本情况说明",
+					"bullet6": "投资期限、规模及结构",
+					"bullet7": "收益分配机制（如适用）",
+					"bullet8": "已识别的主要风险因素",
+					"bullet9": "相关法律文件与第三方资料",
+					"content1": "平台展示的资产产品，均基于真实世界中的底层资产，例如但不限于：",
+					"content2": "针对每一资产产品，平台提供结构化的信息披露，包括：",
+					"content3": "所有信息均来源于项目方、托管机构或第三方专业机构，平台不对其完整性或准确性作出保证。",
+					"title": "1. 真实资产信息披露"
+				},
+				"title": "三、核心功能概述"
+			}
+		},
+		"bill": {
+			"list": {
+				"orderFilterTip": "仅显示订单{orderId}的账单"
+			}
+		},
+		"login": {
+			"button": {
+					"emailLogin": "邮箱登录",
+				"login": "登录",
+				"mobileLogin": "手机登录",
+				"register": "注册账号",
+				"switchToCode": "验证码登录",
+				"switchToPassword": "密码登录"
+			},
+			"form": {
+				"codeError": "请输入验证码",
+				"codeLabel": "验证码",
+				"codePlaceholder": "请输入验证码",
+					"emailError": "请输入邮箱",
+					"emailFormatError": "邮箱格式不正确",
+					"emailLabel": "邮箱",
+					"emailPlaceholder": "请输入邮箱",
+				"passwordError": "请输入您的账户密码",
+				"passwordLabel": "账户密码",
+				"passwordPlaceholder": "您的账户密码（6—12位数字+字母）",
+				"phoneError": "请输入您的手机号",
+				"phoneFormatError": "手机号格式不正确",
+				"phoneLabel": "手机号",
+				"phonePlaceholder": "请输入手机号",
+				"title": "Welcome to login"
+			},
+			"message": {
+				"agreeRequired": "请先同意协议",
+				"loggingIn": "正在登录",
+				"loginFailed": "登录失败，请重试",
+				"loginSuccess": "登录成功"
+			}
+		},
+		"message": {
+			"detail": {
+				"notFound": "消息不存在",
+				"order": "订单",
+				"viewAddress": "查看地址：",
+				"viewOrder": "查看订单："
+			}
+		},
+		"order": {
+			"checkout": {
+				"account": "账户：",
+				"applyDividend": "申请当期分红",
+				"applySuccess": "申请分红成功",
+				"arrivalTime": "到账时间：",
+				"arrivalTimeValue": "平台确认后28日",
+				"confirmApplyDividend": "确认申请分红",
+				"dividendAmount": "分红金额",
+				"estimated": "预估",
+				"inputCodeTitle": "输入验证码",
+				"loadPaymentDescError": "加载支付说明",
+				"payee": "收款方：",
+				"paymentDescription": "支付说明",
+				"paymentMethod": "支付方式"
+			},
+			"detail": {
+				"applyDividend": "申请当期分红",
+				"contactService": "联系客服",
+				"earlyRedeem": "提前赎回",
+				"fullRedeem": "全部赎回",
+				"viewBill": "查看账单"
+			},
+			"earlyRedeem": {
+				"account": "账户：",
+				"applyEarlyRedeem": "申请提前赎回",
+				"applySuccess": "申请提前赎回成功",
+				"confirmApplyRedeem": "确认提前赎回",
+				"estimated": "预估",
+				"estimatedRedeemAmount": "预估赎回金额：",
+				"fee": "手续费：",
+				"includeIncome": "包含收益 {amount}",
+				"inputCodeTitle": "输入验证码",
+				"loadPaymentDescError": "加载支付说明",
+				"loadRedeemRulesError": "加载赎回规则",
+				"minimumStart": "{quantity}份起赎",
+				"payee": "收款方：",
+				"paymentDescription": "支付说明",
+				"paymentMethod": "支付方式",
+				"redeemQuantity": "赎回份额",
+				"redeemRules": "赎回规则",
+				"redeemRulesNotFound": "赎回规则不存在",
+				"view": "查看"
+			},
+			"index": {
+				"cumulativeIncome": "累计收益/率",
+				"goInvest": "去投资",
+				"loginRegister": "注册/登录",
+				"noInvestment": "您暂未投资任何项目，请前往市场选购",
+				"projectName": "项目名称",
+				"status": "状态",
+				"totalAmount": "总金额"
+			},
+			"individualProfit": {
+				"calendar": "日历",
+				"filterTip": "仅显示订单{orderId}的收益",
+				"noRecord": "暂无收益记录",
+				"profitDetails": "收益明细",
+				"profitRate": "收益/涨幅"
+			},
+			"pay": {
+				"account": "账户：",
+				"clear": "清除",
+				"contractNo": "合同号",
+				"contractNoPlaceholder": "请填写您线下签署合同的合同号",
+				"countdownAlert": "请在{time}内完成支付，否则订单将自动取消",
+				"enterContractNo": "请填写合同号",
+				"estimatedConfirmTime": "预计购买确认时间",
+				"loadPaymentInfoError": "加载支付信息",
+				"orderNotFound": "订单不存在",
+				"payee": "收款方：",
+				"paymentCompleted": "我已完成支付",
+				"paymentTitle": "请付款至下方收款账户，并上传支付凭证，平台确认后将向您的链地址划拨相应资产",
+				"paymentVoucher": "支付凭证",
+				"purchaseQuantity": "购买份额",
+				"remark": "注：平台确认不代表项目启动，项目将在基金募资完毕后启动，如果未能启动，您的资金将原路退回",
+				"submitPayment": "提交支付",
+				"submitSuccess": "支付信息提交",
+				"upload": "上传",
+				"uploadVoucher": "请上传支付凭证"
+			},
+			"popup": {
+				"availableDividend": "可分红金额",
+				"dividendAmount": "分红金额",
+				"dividendAmountError": "请输入有效的分红金额",
+				"dividendAmountExceed": "分红金额不能超过 {amount}",
+				"dividendAmountPlaceholder": "请输入分红金额",
+				"earlyRedeemButton": "提前全部赎回",
+				"earlyRedeemMessage": "提前赎回将收取高额手续费",
+				"earlyRedeemTitle": "提前赎回规则",
+				"redeemAmount": "赎回金额",
+				"redeemButton": "确认赎回",
+				"redeemTitle": "全部赎回",
+				"requestDividendButton": "确认申请",
+				"requestDividendTitle": "申请分红"
+			},
+			"profit": {
+				"calendar": "日历",
+				"noRecord": "暂无收益记录",
+				"profitDetails": "收益明细",
+				"profitRate": "收益/涨幅"
+			},
+			"redeem": {
+				"account": "账户：",
+				"applyRedeem": "申请赎回",
+				"confirmRedeem": "确认赎回",
+				"estimated": "预估",
+				"includeIncome": "包含收益 {amount}",
+				"inputCode": "输入验证码",
+				"loadPaymentDescError": "加载支付说明",
+				"loadRedeemRulesError": "加载赎回规则",
+				"payee": "收款方：",
+				"paymentDescription": "支付说明",
+				"paymentMethod": "支付方式",
+				"redeemQuantity": "赎回份额",
+				"redeemRules": "赎回规则",
+				"redeemRulesNotFound": "赎回规则不存在",
+				"redeemSuccess": "赎回成功",
+				"view": "查看"
+			}
+		},
+		"project": {
+			"buy": {
+				"bindAddress": "去绑定",
+				"buyButton": "购买",
+				"chainAddress": "链地址",
+				"completePayment": "请完成支付",
+				"minimumStart": "{quantity}份起购",
+				"notInSubscription": "当前不在认购期",
+				"purchaseInstructions": "购买须知",
+				"purchaseQuantity": "购入份额",
+				"remark": "注：平台确认不代表项目启动，项目将在基金募资完毕后启动，如果未能启动，您的资金将原路退回",
+				"selectChainAddress": "请选择",
+				"view": "查看"
+			},
+			"components": {
+				"orderContract": {
+					"noContracts": "暂无购买合同"
+				},
+				"popupChainAddress": {
+					"title": "选择链地址"
+				},
+				"popupConfirmProjectBuy": {
+					"agreeRequired": "请同意协议",
+					"confirmBuy": "确认购买"
+				},
+				"popupNoticeDetail": {
+					"attachments": "附件",
+					"content": "内容",
+					"noticeNo": "通知编号：",
+					"publishTime": "发布时间："
+				},
+				"projectDetailBuy": {
+					"customerService": "客服",
+					"insufficientQuantity": "剩余数量不足",
+					"notInSubscription": "不在认购期",
+					"notVerified": "用户未完成投资者认证，无法购买，是否跳转认证？",
+					"projectShare": "项目分享",
+					"share": "分享"
+				},
+				"projectDetailDocument": {
+					"loadFailed": "加载失败，请重试",
+					"loading": "加载中...",
+					"noMaterials": "暂无项目资料",
+					"viewAfterLogin": "登录后查看"
+				},
+				"projectDetailInfo": {
+					"dividendRules": "分红规则",
+					"fundDuration": "基金时长",
+					"issueChain": "发行链",
+					"issueQuantity": "发行数量（份）",
+					"minimumPurchase": "起购量（份）",
+					"projectName": "项目名称",
+					"projectType": "项目类型",
+					"publisher": "发行商",
+					"redemptionRules": "赎回规则"
+				},
+				"projectDetailIntroduction": {
+					"noIntroduction": "暂无项目介绍"
+				},
+				"projectDetailNews": {
+					"noNotices": "暂无通知公告"
+				},
+				"projectInfo": {
+					"issuanceInfo": "发行信息",
+					"notices": "通知公告",
+					"projectIntroduction": "项目介绍",
+					"projectMaterials": "项目资料",
+					"purchaseContracts": "购买合同"
+				},
+				"projectSwitcher": {
+					"all": "全部",
+					"noProjects": "暂无相关项目"
+				},
+				"protocolConfirm": {
+					"agreeText": "我已阅读并同意"
+				}
+			},
+			"detail": {
+				"expectedAnnualReturn": "预期年化收益",
+				"issueUnitPrice": "发行单价",
+				"remainingQuantity": "剩余数量（份）"
+			},
+			"index": {
+				"feature1Content1": "对接香港 Web3 与金融监管环境",
+				"feature1Content2": "支持持牌主体参与与合规发行结构",
+				"feature1Content3": "兼容 KYC / KYB / AML / 投资者适当性管理",
+				"feature2Content1": "一资产一结构，一资产一合约",
+				"feature2Content2": "明确资产来源、权属关系与收益逻辑",
+				"feature2Content3": "支持算力、能源、碳资产、应收账款、文化资产等多类型 RWA",
+				"feature3Content1": "RWA 资产建模引擎",
+				"feature3Content2": "合规代币化发行模块",
+				"feature3Content3": "链上收益分配与清算系统",
+				"feature3Content4": "RWA 生命周期管理（发行 / 持有 / 流转 / 退出）",
+				"hongKongCompliance": "香港合规优先",
+				"modularInfrastructure": "模块化 RWA 基础设施",
+				"realAssets": "真实资产，真实映射",
+				"registerLogin": "注册/登录",
+				"slogan": "连接真实资产，走向全球市场",
+				"subTitle": "让价值，被全球可信连接",
+				"welcomeTitle": "欢迎使用阳光基金",
+				"welcomeTitleRWA": "欢迎使用高歌RWA",
+				"whyChoose": "为什么选择阳光基金？",
+				"whyChooseRWA": "为什么选择高歌RWA？"
+			}
+		},
+		"protocol": {
+			"detail": {
+				"loadError": "加载协议详情",
+				"loading": "加载中..."
+			},
+			"list": {
+				"loadError": "加载协议列表"
+			}
+		},
+		"register": {
+			"button": {
+				"emailRegister": "邮箱注册",
+				"goLogin": "已有账号？去登录",
+				"mobileRegister": "手机号注册",
+				"register": "注册"
+			},
+			"form": {
+				"codeError": "请输入验证码",
+				"codeLabel": "验证码",
+				"codePlaceholder": "请输入验证码",
+				"confirmPasswordError": "请再次输入您的账户密码",
+				"confirmPasswordLabel": "确认密码",
+				"confirmPasswordMismatch": "两次输入的密码不一致",
+				"confirmPasswordPlaceholder": "请再次输入您的账户密码",
+				"passwordError": "请输入您的账户密码",
+				"passwordLabel": "密码",
+				"passwordLengthError": "密码长度为6-12位",
+				"passwordPlaceholder": "您的账户密码（6—12位数字+字母）",
+				"phoneError": "请输入您的手机号",
+				"phoneLabel": "手机号",
+				"phonePlaceholder": "请输入手机号"
+			},
+			"message": {
+				"agreeRequired": "请先同意协议",
+				"registerFailed": "注册失败，请重试",
+				"registerSuccess": "注册成功",
+				"registering": "正在注册"
+			}
+		},
+		"user": {
+			"auth": {
+				"bankCard": "银行卡",
+				"bankFlow": "银行流水单",
+				"edit": "修改",
+				"editBankInfo": "修改银行卡信息",
+				"idCard": "身份证",
+				"phone": "联系电话",
+				"qualification": "职业资质",
+				"reason": "原因：",
+				"residenceProof": "住址证明",
+				"submitAudit": "提交审核",
+				"submitTime": "提交时间："
+			},
+			"bind": {
+				"email": "邮箱",
+				"emailLabel": "邮箱",
+				"emailPlaceholder": "请输入邮箱",
+				"fail": "绑定失败",
+				"mailCodeLabel": "邮箱验证码",
+				"mailCodePlaceholder": "请输入邮箱验证码",
+				"mobile": "手机号",
+				"mobileLabel": "手机号",
+				"mobilePlaceholder": "请输入手机号",
+				"smsCodeLabel": "手机验证码",
+				"smsCodePlaceholder": "请输入手机验证码",
+				"success": "绑定成功",
+				"titleEmail": "绑定邮箱",
+				"titleMobile": "绑定手机"
+			},
+			"bindChainAddress": {
+				"bindSuccess": "提交绑定链地址成功",
+				"confirmButton": "确认绑定",
+				"connectButton": "连接钱包",
+				"connectError": "连接钱包失败",
+				"connectPrompt": "请连接您的钱包",
+				"connectedAddress": "已连接地址",
+				"getSignatureFailed": "获取签名失败",
+				"messageError": "获取签名消息失败",
+				"notConnected": "请先连接钱包",
+				"submitBindFailed": "提交绑定失败",
+				"switch": "切换",
+				"switchError": "切换地址失败",
+				"title": "绑定链地址"
+			},
+			"chainAddress": {
+				"confirmUnbind": "确认解绑",
+				"empty": "暂无链地址",
+				"unbindFailed": "解绑失败",
+				"unbindMessage": "确定要解绑链地址 {address} 吗？",
+				"unbindSuccess": "解绑成功"
+			},
+			"currency": {
+				"setError": "设置失败，请重试",
+				"title": "选择货币"
+			},
+			"fontSize": {
+				"title": "字体大小"
+			},
+			"index": {
+				"loginRegister": "注册/登录",
+				"logout": "退出登录",
+				"menu": {
+					"about": "关于我们",
+					"address": "链地址",
+					"audit": "身份认证",
+					"bill": "我的账单",
+					"bindEmail": "绑定邮箱",
+					"bindMobile": "绑定手机",
+					"contact": "联系客服",
+					"currency": "货币",
+					"fontSize": "字体大小",
+					"history": "登录历史",
+					"language": "语言",
+					"order": "我的订单",
+					"password": "账户密码",
+					"protocol": "平台协议",
+					"twofa": "双因素认证(2FA)",
+					"viewBind": "查看绑定"
+				}
+			},
+			"language": {
+				"title": "切换语言"
+			},
+			"loginPassword": {
+				"confirmPassword": "确认新密码",
+				"confirmPasswordError": "请确认新密码",
+				"emailCode": "邮箱验证码",
+				"newPassword": "新密码",
+				"newPasswordError": "请输入新密码",
+				"passwordLengthError": "密码长度至少6位",
+				"passwordMismatch": "两次输入的密码不一致",
+				"resetButton": "重置密码",
+				"resetSuccess": "密码重置成功",
+				"smsCode": "短信验证码",
+				"verificationCode": "验证码"
+			},
+			"password": {
+				"loginPassword": "登录密码 ******"
+			},
+			"twofa": {
+				"codeError": "验证码错误或验证失败",
+				"confirmUnbind": "确认要请求解绑2FA吗?",
+				"rebind": "重新绑定",
+				"title": "双因素身份验证(2FA)",
+				"unbind": "解绑",
+				"verify": "验证",
+				"verifyAndBind": "验证并绑定",
+				"verifyFailed": "2FA验证失败",
+				"verifySuccess": "2FA验证成功"
+			},
+			"verify": {
+				"account": "账户",
+				"accountName": "开户名",
+				"accountNamePlaceholder": "请填写开户名",
+				"accountPlaceholder": "请填写账户",
+				"agreeRequired": "请同意协议",
+				"bankCardGroup": "银行卡",
+				"bankFlow": "银行流水单",
+				"bankFlowNote": "（请上传jpg或png格式, 最多6张, 每张不超过{size}）",
+				"bankName": "开户行",
+				"bankNamePlaceholder": "请填写开户行",
+				"expireDate": "有效期",
+				"expireDatePlaceholder": "请选择您的证件有效期",
+				"formatNote": "（请上传jpg或png格式）",
+				"idCardBack": "上传身份证原件国徽面",
+				"idCardFront": "上传身份证原件头像面",
+				"idCardNumber": "身份证号",
+				"idCardNumberPlaceholder": "请输入您的身份证号",
+				"loadError": "加载信息失败",
+				"phonePlaceholder": "请填写联系电话",
+				"qualification": "投资资质",
+				"qualificationNote": "（请上传jpg或png格式, 最多6张, 每张不超过{size}）",
+				"realName": "姓名",
+				"realNamePlaceholder": "请输入您的真实姓名",
+				"recognize": "识别",
+				"recognizing": "识别中...",
+				"residenceProof": "住址证明",
+				"residenceProofNote": "（请上传jpg或png格式, 最多6张, 每张不超过{size}）",
+				"submitButton": "提交认证申请",
+				"uploadIdCard": "上传身份证"
+			},
+			"verifySubmitted": {
+				"home": "返回首页",
+				"message": "认证申请已提交，请等待审核"
+			}
+		}
+	},
+	"popup": {
+		"bind2fa": {
+			"codeInputHint": "请输入6位验证码",
+			"confirmBtn": "确认绑定",
+			"errorMsg": "验证码错误或绑定失败",
+			"failMsg": "2FA绑定失败",
+			"successMsg": "2FA绑定成功",
+			"title": "绑定双因素身份验证",
+			"verifyCodeHint": "请输入验证器中的6位验证码"
+		},
+		"contactService": {
+			"copyHint": "点击复制",
+			"email": "邮箱",
+			"title": "联系客服",
+			"wechat": "微信"
+		},
+		"editUserInfo": {
+			"avatar": "头像",
+			"nickname": "昵称",
+			"nicknameHint": "请输入昵称",
+			"saveBtn": "保存",
+			"successMsg": "修改用户信息",
+			"title": "编辑用户信息",
+			"uploadHint": "点击上传头像"
+		},
+		"initBind2fa": {
+			"addBtn": "添加到验证器",
+			"copyBtn": "复制密钥",
+			"initFailMsg": "初始化2FA失败",
+			"title": "绑定双因素身份验证",
+			"verifyBtn": "验证绑定"
+		},
+		"input2fa": {
+			"codeInputHint": "请输入6位验证码",
+			"confirmBtn": "确认",
+			"title": "输入双因素身份验证码",
+			"verifyCodeHint": "请输入验证器中的6位验证码"
+		},
+		"inputCode": {
+			"codeInputHint": "请输入4位验证码",
+			"confirmBtn": "确认",
+			"emailCodeSentHint": "已向您{email}的邮箱发送验证码",
+			"getCodeBtn": "获取验证码",
+			"getEmailCodeBtn": "获取邮箱验证码",
+			"getSmsCodeBtn": "获取短信验证码",
+			"smsCodeSentHint": "已向您{phone}的手机号发送验证码",
+			"switchToEmail": "改用邮箱验证码",
+			"switchToSms": "改用短信验证码",
+			"title": "输入验证码",
+			"twoFactorHint": "请输入6位双因素验证码"
+		},
+		"protocol": {
+			"loadFailMsg": "加载协议",
+			"loadingMsg": "加载中...",
+			"title": "协议详情"
+		},
+		"share": {
+			"copiedMsg": "已复制到剪贴板",
+			"copyLink": "复制链接",
+			"failMsg": "分享失败",
+			"title": "分享到"
+		},
+		"unbind2fa": {
+			"codeInputHint": "请输入4位验证码",
+			"codeSentMsg": "验证码已发送，请稍候",
+			"codeSentSuccessMsg": "验证码已发送",
+			"confirmBtn": "确认解绑",
+			"countdownMsg": "{time}秒后重新发送",
+			"errorMsg": "验证码错误或解绑失败",
+			"failMsg": "2FA解绑失败",
+			"sendCodeBtn": "发送验证码",
+			"successMsg": "2FA解绑成功"
+		},
+		"userVerifyConfirm": {
+			"codeInputHint": "请输入4位验证码",
+			"confirmBtn": "确认",
+			"countdownMsg": "{time}秒后重新发送",
+			"sendCodeBtn": "发送验证码",
+			"smsCodeSentHint": "已向您{phone}的手机号发送验证码",
+			"title": "发送验证码"
+		}
+	}
+}
