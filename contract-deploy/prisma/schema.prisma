@@ -1,0 +1,173 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// 区块链地址模型
+model BlockchainAddress {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(255)
+  address     String   @unique @db.VarChar(100)
+  privateKey  String   @db.LongText
+  description String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("blockchain_addresses")
+}
+
+// 系统初始化状态模型 - 跟踪整个系统的初始化进度
+model SystemInitialization {
+  id                Int      @id @default(autoincrement())
+  step              String   @unique @db.VarChar(100) // 初始化步骤标识
+  status            String   @default("pending") @db.VarChar(50) // pending, in_progress, completed, failed
+  contractAddress   String?  @db.VarChar(100) // 部署的合约地址
+  transactionHash   String?  @db.VarChar(100)
+  blockNumber       Int?
+  errorMessage      String?  @db.Text
+  metadata          Json?    // 额外的元数据
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("system_initialization")
+}
+
+// 合约部署模型 - 记录基础设施合约
+model ContractDeployment {
+  id                Int      @id @default(autoincrement())
+  contractType      String   @unique @db.VarChar(100) // 合约类型，唯一
+  deploymentAddress String   @unique @db.VarChar(100)
+  deployerAddress   String   @db.VarChar(100)
+  deploymentInfo    Json?
+  transactionHash   String?  @db.VarChar(100)
+  blockNumber       Int?
+  status            String   @default("deployed") @db.VarChar(50)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("contract_deployments")
+}
+
+// IdentityRegistryStorage 模型 - 每个 IRS 最多支持 300 个 Token
+model IdentityRegistryStorage {
+  id              Int      @id @default(autoincrement())
+  address         String   @unique @db.VarChar(100)
+  deployerAddress String   @db.VarChar(100)
+  transactionHash String?  @db.VarChar(100)
+  blockNumber     Int?
+  boundTokenCount Int      @default(0) // 已绑定的 Token 数量，最大 300
+  status          String   @default("deployed") @db.VarChar(50) // deployed, active
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  tokens Token[]
+
+  @@map("identity_registry_storages")
+}
+
+// Token 模型 - 记录部署的 Token
+model Token {
+  id                        Int                     @id @default(autoincrement())
+  name                      String                  @db.VarChar(255)
+  symbol                    String                  @db.VarChar(50)
+  decimals                  Int                     @default(18)
+  address                   String?                 @unique @db.VarChar(100)
+  ownerAddress              String                  @db.VarChar(100)
+  deployerAddress           String                  @db.VarChar(100)
+  identityRegistryStorageId Int
+  identityRegistryStorage   IdentityRegistryStorage @relation(fields: [identityRegistryStorageId], references: [id])
+  // Token 部署时创建的相关合约地址
+  identityRegistryAddress   String?                 @db.VarChar(100)
+  claimTopicsRegistryAddress String?                @db.VarChar(100)
+  trustedIssuersRegistryAddress String?             @db.VarChar(100)
+  modularComplianceAddress  String?                 @db.VarChar(100)
+  tokenOnchainIdAddress     String?                 @db.VarChar(100)
+  transactionHash           String?                 @db.VarChar(100)
+  blockNumber               Int?
+  status                    String                  @default("pending") @db.VarChar(50) // pending, deployed, failed
+  salt                      String                  @db.VarChar(255)
+  tokenAgents               Json?                   // 存储 tokenAgents 数组
+  claimTopics               Json?                   // 存储 claimTopics 数组
+  issuers                   Json?                   // 存储 issuers 数组
+  issuerClaims              Json?                   // 存储 issuerClaims 二维数组
+  deploymentInfo            Json?                   // 其他部署信息
+  errorMessage              String?                 @db.Text
+  createdAt                 DateTime                @default(now())
+  updatedAt                 DateTime                @updatedAt
+
+  @@map("tokens")
+}
+
+// ClaimTopic 模型 - 记录 Claim Topic
+model ClaimTopic {
+  id        Int      @id @default(autoincrement())
+  name      String   @db.VarChar(255) // Topic 名称
+  value     String   @unique @db.VarChar(100) // Topic 值
+  topic     String   @unique @db.VarChar(100) // keccak256(value) 的结果
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("claim_topics")
+}
+
+// ClaimIssuerIdentity 模型 - 记录 ClaimIssuer 身份
+model ClaimIssuerIdentity {
+  id                    Int      @id @default(autoincrement())
+  address               String   @unique @db.VarChar(100) // 初始 ClaimIssuer 地址
+  contractAddress       String?  @unique @db.VarChar(100) // Identity 合约地址（可能为空，等待部署）
+  managementKey         String   @db.VarChar(100) // 管理 key 的地址（deployer）
+  blockchainAddressId   Int? // 关联的 blockchain_addresses 表 ID
+  salt                  String?  @db.VarChar(255) // 用于生成确定性地址的salt值
+  transactionHash       String?  @db.VarChar(100) // 部署交易哈希
+  blockNumber           Int? // 部署区块号
+  contractDeployed      Boolean  @default(false) // 合约是否已部署
+  claimKeySetup         Boolean  @default(false) // ClaimKey 是否已设置
+  status                String   @default("active") @db.VarChar(50) // active, inactive
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@map("claim_issuer_identities")
+}
+
+// UserIdentity 模型 - 记录 User 身份
+model UserIdentity {
+  id                    Int      @id @default(autoincrement())
+  address               String   @unique @db.VarChar(100) // 初始用户地址
+  contractAddress       String?  @unique @db.VarChar(100) // Identity 合约地址（可能为空，等待部署）
+  managementKey         String   @db.VarChar(100) // 管理 key 的地址（deployer）
+  blockchainAddressId   Int? // 关联的 blockchain_addresses 表 ID
+  salt                  String?  @db.VarChar(255) // 用于生成确定性地址的salt值
+  transactionHash       String?  @db.VarChar(100) // 部署交易哈希
+  blockNumber           Int? // 部署区块号
+  contractDeployed      Boolean  @default(false) // 合约是否已部署
+  claimKeySetup         Boolean  @default(false) // ClaimKey 是否已设置
+  countryCode           Int? // 国家代码
+  associatedTokenIds    Json? // 已关联到的 Token IDs 数组
+  pendingTokenIds       Json? // 待关联的 Token IDs 数组
+  status                String   @default("active") @db.VarChar(50) // active, inactive
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+
+  @@map("user_identities")
+}
+
+// AddressIdentity 模型 - 记录地址与 Identity 的映射关系
+model AddressIdentity {
+  id              Int      @id @default(autoincrement())
+  address         String   @db.VarChar(100) // 钱包地址
+  identityId      Int // Identity ID
+  type            String   @db.VarChar(50) // User 或 ClaimIssuer
+  contractAddress String?  @db.VarChar(100) // Identity 合约地址
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@unique([address, type]) // 同一地址在同一类型下唯一
+  @@map("address_identities")
+}

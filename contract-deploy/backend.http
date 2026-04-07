@@ -1,0 +1,148 @@
+### 添加钱包
+POST {{host}}/wallet
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "wallet",
+  "privateKey": "0x",
+  "description": ""
+}
+
+### 获取钱包列表
+GET {{host}}/wallet
+Accept: application/json
+
+
+### 获取部署状态
+GET {{host}}/trex/status
+Accept: application/json
+
+### 初始化部署
+POST {{host}}/trex/initialize
+Content-Type: application/json
+Accept: application/json
+
+### 添加 ClaimIssuer
+POST {{host}}/identity/claim-issuer
+Content-Type: application/json
+Accept: application/json
+
+{
+  "address": "0x7c460f0b15ffd0941f1832fb8671d90bfb6c2aa2"
+}
+
+### 部署ERC3643
+POST {{host}}/trex/deploy-token
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Test Token",
+  "symbol": "TEST",
+  "ownerAddress": "0x5dcd2165df157bb1717c60f976a5e933e73a084d",
+  "tokenAgents": ["0x5dcd2165df157bb1717c60f976a5e933e73a084d"],
+  "salt": "test",
+  "claimTopics": ["0x67de13167a807bb19655bccb2de80675f62130ccbf7146f75dbd7d79b9f3018c"],
+  "issuers": ["0x2DA50d75C2a14151C6CBE53fB380Dbb648F42F1a"],
+  "issuerClaims": [["0x67de13167a807bb19655bccb2de80675f62130ccbf7146f75dbd7d79b9f3018c"]]
+}
+
+### 获取claimTopic列表
+GET {{host}}/claim-topics
+Accept: application/json
+
+### 创建ClaimTopic
+POST {{host}}/claim-topics
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "平台验证",
+  "value": "PLATFORM_VERIFIED"
+}
+
+### 部署ERC3643
+POST {{host}}/trex/deploy-token
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Test Token",
+  "symbol": "TEST",
+  "ownerAddress": "0x7C41f373E01d7E326024405c0b3C69427A7A7460",
+  "tokenAgents": ["0x7C41f373E01d7E326024405c0b3C69427A7A7460"],
+  "salt": "test",
+  "claimTopics": ["0x67de13167a807bb19655bccb2de80675f62130ccbf7146f75dbd7d79b9f3018c"],
+  "issuers": ["0x2Ce7c96206C06E9668f7C526D5605478914Ba2E7"],
+  "issuerClaims": [["0x67de13167a807bb19655bccb2de80675f62130ccbf7146f75dbd7d79b9f3018c"]]
+}
+
+### 添加 User
+#https://en.wikipedia.org/wiki/ISO_3166-1_numeric
+POST {{host}}/identity/user
+Content-Type: application/json
+Accept: application/json
+
+{
+  "address": "0x334D788c5DA440B60765C675e50270d158fAb551",
+  "token_id": 1,
+  "countryCode": 156
+}
+
+### 获取所有身份（包含 contractDeployed 和 claimKeySetup 状态）
+GET {{host}}/identity
+Accept: application/json
+
+### 根据ID获取身份（包含 contractDeployed 和 claimKeySetup 状态）
+GET {{host}}/identity/1
+Accept: application/json
+
+### 根据合约地址获取身份
+GET {{host}}/identity/contract/0x1DaF1c9db21AABC1E4e5818a3a25E3A1233f9739
+Accept: application/json
+
+### 获取token列表
+GET {{host}}/token
+Accept: application/json
+
+### 发行token
+POST {{host}}/token/1/mint
+Content-Type: application/json
+Accept: application/json
+
+{
+  "toAddress": "0x3a42757ed20441f08d7116dd1836462bb423d7c3",
+  "amount": "1"
+}
+
+### 完成待处理的操作（部署合约和设置ClaimKey）
+POST {{host}}/identity/1/complete-pending
+Content-Type: application/json
+Accept: application/json
+
+### 签发Claim
+POST {{host}}/identity/1/issue-claim
+Content-Type: application/json
+Accept: application/json
+
+{
+  "userId": 999,
+  "topic": "0x67de13167a807bb19655bccb2de80675f62130ccbf7146f75dbd7d79b9f3018c",
+  "data": "0x53c772a15f3c34f31d8fcc23df39502f5cf4de33faa7e6182805ac8876319349",
+  "uri": "https://did.hkuclion.com/verify-claim",
+  "scheme": 1
+}
+
+### 关联新钱包
+POST {{host}}/identity/link-wallet
+Content-Type: application/json
+Accept: application/json
+
+{
+  "new_wallet_address": "0xbC8ff7a044a21d43EC456969675Ee3f28278770F",
+  "old_wallet_address": "0x3a42757ed20441f08d7116dd1836462bb423d7c3"
+}
+
+
+
