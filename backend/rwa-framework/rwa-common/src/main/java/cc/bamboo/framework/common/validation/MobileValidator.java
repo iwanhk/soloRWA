@@ -3,6 +3,7 @@ package cc.bamboo.framework.common.validation;
 import cn.hutool.core.util.StrUtil;
 import com.google.i18n.phonenumbers.PhoneNumberUtil;
 import com.google.i18n.phonenumbers.Phonenumber;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -10,10 +11,10 @@ import javax.validation.ConstraintValidatorContext;
 @org.springframework.stereotype.Component
 public class MobileValidator implements ConstraintValidator<Mobile, String> {
 
-    @org.springframework.beans.factory.annotation.Value("${rwa.mobile.allowed-codes:all}")
+    @Value("${rwa.mobile.allowed-codes:all}")
     private String allowedCodes;
 
-    @org.springframework.beans.factory.annotation.Value("${rwa.mobile.excluded-codes:}")
+    @Value("${rwa.mobile.excluded-codes:}")
     private String excludedCodes;
 
     @Override

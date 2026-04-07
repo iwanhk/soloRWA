@@ -315,18 +315,15 @@ public class AppProjectOrderServiceImpl implements AppProjectOrderService {
         log.info("[createOrder] 开始创建订单，用户ID: {}, 项目ID: {}, 钱包地址: {}, 购买数量: {}",
                 userId, projectId, addressId, quantity);
         // 查询链地址
-        UserChainDO userChain = userChainMapper.selectById(addressId);
-        if (userChain == null || !userChain.getUserId().equals(userId)) {
-            log.warn("[createOrder] 链地址不存在，链地址ID: {}", addressId);
-            throw exception(CHAIN_ADDRESS_NOT_EXISTS);
-        }
+        UserChainDO userChain = userChainMapper.selectByUserId(userId);
+
         // 如果不是可用状态也不行
-        if (!ChainAddressStatusEnum.SUCCESS.getStatus().equals(userChain.getChainStatus())) {
+       /* if (!ChainAddressStatusEnum.SUCCESS.getStatus().equals(userChain.getChainStatus())) {
             log.warn("[createOrder] 链地址状态错误，链地址ID: {}", addressId);
             throw exception(CHAIN_ADDRESS_STATUS_ERROR);
-        }
+        }*/
 
-        String chainAddress = userChain.getChainAddress();
+        String chainAddress = userChain != null ? userChain.getChainAddress() : null;
 
         String orderNo = generateOrderNo();
         // 4. 验证项目存在性和状态（必须是"出售中"）

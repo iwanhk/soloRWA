@@ -16,6 +16,7 @@ import javax.validation.constraints.NotNull;
 public class AppAuthSmsSendReqVO {
 
     @Schema(description = "手机号", example = "15601691234")
+    @Mobile
     private String mobile;
 
     @Schema(description = "发送场景,对应 SmsSceneEnum 枚举", example = "1")

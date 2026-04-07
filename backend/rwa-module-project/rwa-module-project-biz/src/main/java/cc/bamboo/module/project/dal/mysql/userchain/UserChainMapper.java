@@ -16,6 +16,9 @@ import org.apache.ibatis.annotations.Select;
 @Mapper
 public interface UserChainMapper extends BaseMapperX<UserChainDO> {
 
-
+    default UserChainDO selectByUserId(Long userId) {
+        return selectOne(new LambdaQueryWrapperX<UserChainDO>()
+                .eq(UserChainDO::getUserId, userId).last("limit 1"));
+    }
 
 }

@@ -7,12 +7,12 @@ spring:
       username: # Nacos 账号
       password: # Nacos 密码
       discovery: # 【配置中心】配置项
-        namespace: 930de52d-671f-4aa4-9b68-6a8ee64c0009 # 命名空间。这里使用 dev 开发环境
+        namespace: 842342f6-4a21-4134-9190-a7968e45fb25 # 命名空间。这里使用 dev 开发环境
         group: DEFAULT_GROUP # 使用的 Nacos 配置分组，默认为 DEFAULT_GROUP
         metadata:
           version: 1.0.0 # 服务实例的版本号，可用于灰度发布
       config: # 【注册中心】配置项
-        namespace: 930de52d-671f-4aa4-9b68-6a8ee64c0009 # 命名空间。这里使用 dev 开发环境
+        namespace: 842342f6-4a21-4134-9190-a7968e45fb25 # 命名空间。这里使用 dev 开发环境
         group: DEFAULT_GROUP # 使用的 Nacos 配置分组，默认为 DEFAULT_GROUP
 
 --- #################### 数据库相关配置 ####################
@@ -57,7 +57,7 @@ spring:
       primary: master
       datasource:
         master:
-          url: jdbc:mysql://127.0.0.1:3306/rwa-bamboo?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
+          url: jdbc:mysql://127.0.0.1:3306/rwa_domestic?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true # MySQL Connector/J 8.X 连接的示例
           #          url: jdbc:mysql://127.0.0.1:3306/ruoyi-vue-pro?useSSL=true&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true # MySQL Connector/J 5.X 连接的示例
           #          url: jdbc:postgresql://127.0.0.1:5432/ruoyi-vue-pro # PostgreSQL 连接的示例
           #          url: jdbc:oracle:thin:@127.0.0.1:1521:xe # Oracle 连接的示例
@@ -71,7 +71,7 @@ spring:
         #          password: SYSDBA # DM 连接的示例
         slave: # 模拟从库，可根据自己需要修改
           lazy: true # 开启懒加载，保证启动速度
-          url: jdbc:mysql://127.0.0.1:3306/rwa-bamboo?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true
+          url: jdbc:mysql://127.0.0.1:3306/rwa_domestic?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true&rewriteBatchedStatements=true
           username: root
           password: 123456
 
@@ -79,7 +79,7 @@ spring:
   redis:
     host: 127.0.0.1 # 地址
     port: 6379 # 端口
-    database: 9 # 数据库索引
+    database: 10 # 数据库索引
     password: :123456 # 密码，建议生产环境开启
 
 --- #################### MQ 消息队列相关配置 ####################
@@ -185,11 +185,11 @@ rwa:
     env-version: develop # 小程序版本: 正式版为 "release"；体验版为 "trial"；开发版为 "develop"
   wxa-subscribe-message:
   sms-code:
-    enable-send: true # 开发环境不发送真实短信
+    enable-send: false # 开发环境不发送真实短信
     expire-times: 10m
     send-frequency: 30s
     send-maximum-quantity-per-day: 1000
-    begin-code: 1000 # 这里配置 9999 的原因是，测试方便。
+    begin-code: 9999 # 这里配置 9999 的原因是，测试方便。
     end-code: 9999 # 这里配置 9999 的原因是，测试方便。
 
 

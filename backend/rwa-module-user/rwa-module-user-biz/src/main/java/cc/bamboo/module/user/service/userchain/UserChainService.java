@@ -68,6 +68,9 @@ public interface UserChainService {
      */
     Long bindAddress(AppBindAddressReqVO repVO);
 
+
+    Long createAddress(Long userId);
+
     /**
      * 解绑链地址
      *

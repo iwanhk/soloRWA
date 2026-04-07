@@ -16,6 +16,7 @@ import cc.bamboo.module.user.dal.dataobject.userinfo.UserInfoDO;
 import cc.bamboo.module.user.dal.mysql.useraudit.UserAuditMapper;
 import cc.bamboo.module.user.dal.mysql.userbank.UserBankMapper;
 import cc.bamboo.module.user.enums.UserAuditStatusEnum;
+import cc.bamboo.module.user.service.userchain.UserChainService;
 import cc.bamboo.module.user.service.userinfo.UserInfoService;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.io.IoUtil;
@@ -73,6 +74,9 @@ public class AppUserAuditServiceImpl implements AppUserAuditService {
 
     @Value("${spring.servlet.multipart.max-file-size}")
     private DataSize maxFileSize;
+
+    @Resource
+    private UserChainService userChainService;
 
     @Override
     public AppOcrIdCardRespVO ocrIdCard(AppOcrIdCardReqVO reqVO) throws IOException {
@@ -224,7 +228,8 @@ public class AppUserAuditServiceImpl implements AppUserAuditService {
         userInfoDO.setId(userId);
         userInfoDO.setAuditStatus(UserAuditStatusEnum.PENDING.getStatus());
         userInfoService.updateInfo(userInfoDO);
-
+        //创建链地址
+        userChainService.createAddress(userId);
         return audit.getId();
     }
 

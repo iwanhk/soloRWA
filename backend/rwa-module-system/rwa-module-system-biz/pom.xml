@@ -144,7 +144,7 @@
 
     <build>
         <!-- 设置构建的 jar 包名 -->
-        <finalName>${project.artifactId}</finalName>
+        <finalName>domestic-system</finalName>
         <plugins>
             <!-- 打包 -->
             <plugin>

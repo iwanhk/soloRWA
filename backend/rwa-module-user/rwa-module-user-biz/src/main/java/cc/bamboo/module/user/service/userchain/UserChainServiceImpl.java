@@ -11,11 +11,16 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import org.springframework.validation.annotation.Validated;
 
 import java.util.*;
+import java.math.BigInteger;
+import org.web3j.crypto.ECKeyPair;
+import org.web3j.crypto.Keys;
+import org.web3j.utils.Numeric;
 import java.util.concurrent.TimeUnit;
 
 import cc.bamboo.module.user.controller.admin.userchain.vo.*;
@@ -110,7 +115,7 @@ public class UserChainServiceImpl implements UserChainService {
 
         Long userId = getLoginUserId();
         validateSign(userId, repVO.getSign(), repVO.getChainAddress());
-        //查看该链地址是否已经绑定
+        // 查看该链地址是否已经绑定
         LambdaQueryWrapper<UserChainDO> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(UserChainDO::getChainAddress, repVO.getChainAddress());
         queryWrapper.ne(UserChainDO::getChainStatus, ChainAddressStatusEnum.UNBIND.getStatus());
@@ -133,6 +138,38 @@ public class UserChainServiceImpl implements UserChainService {
             linkWallet(userId, userChainDO.getId(), repVO.getChainAddress());
         }
         return userChainDO.getId();
+    }
+
+    @Override
+    @Async
+    public Long createAddress(Long userId) {
+        LambdaQueryWrapper<UserChainDO> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(UserChainDO::getUserId, userId);
+        Long count = chainMapper.selectCount(queryWrapper);
+        if (count > 0) {
+            return 0L;
+        }
+
+        try {
+            ECKeyPair ecKeyPair = Keys.createEcKeyPair();
+            BigInteger privateKeyIn = ecKeyPair.getPrivateKey();
+            String privateKey = Numeric.toHexStringWithPrefix(privateKeyIn);
+            String address = "0x" + Keys.getAddress(ecKeyPair);
+            log.info("createAddress userId: {}, privateKey: {}, address: {}", userId, privateKey, address);
+            UserChainDO userChainDO = new UserChainDO();
+            userChainDO.setUserId(userId);
+            userChainDO.setChainAddress(address);
+            userChainDO.setPrivateKey(privateKey);
+            userChainDO.setChainStatus(ChainAddressStatusEnum.BINDING.getStatus());
+            chainMapper.insert(userChainDO);
+
+            createIdentity(userId, userChainDO.getId(), address);
+            return userChainDO.getId();
+
+        } catch (Exception e) {
+            log.error("createAddress error", e);
+            throw new RuntimeException("Create keys failed");
+        }
     }
 
     @Override

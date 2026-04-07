@@ -8,7 +8,7 @@
       :inline="true"
       label-width="68px"
     >
-      <el-form-item label="手机号" prop="mobile">
+<!--      <el-form-item label="手机号" prop="mobile">
         <el-input
           v-model="queryParams.mobile"
           placeholder="请输入手机号"
@@ -16,7 +16,7 @@
           @keyup.enter="handleQuery"
           class="!w-240px"
         />
-      </el-form-item>
+      </el-form-item>-->
       <el-form-item label="审核状态" prop="auditStatus">
         <el-select
           v-model="queryParams.auditStatus"
@@ -25,9 +25,7 @@
           class="!w-240px"
         >
           <el-option
-            v-for="dict in getIntDictOptions(DICT_TYPE.AUDIT_STATUS).filter(
-              (item) => item.value !== 4
-            )"
+            v-for="dict in getIntDictOptions(DICT_TYPE.AUDIT_STATUS).filter(item => item.value !== 4)"
             :key="dict.value"
             :label="dict.label"
             :value="dict.value"
@@ -48,7 +46,7 @@
       <el-form-item>
         <el-button @click="handleQuery"><Icon icon="ep:search" class="mr-5px" /> 搜索</el-button>
         <el-button @click="resetQuery"><Icon icon="ep:refresh" class="mr-5px" /> 重置</el-button>
-        <!--        <el-button
+<!--        <el-button
           type="success"
           plain
           @click="handleExport"
@@ -81,9 +79,8 @@
     >
       <el-table-column type="selection" width="55" />
       <el-table-column label="用户ID" align="center" prop="id" />
-      <el-table-column label="手机号" align="center" prop="mobile" />
+      <el-table-column label="邮箱" align="center" prop="email" />
       <el-table-column label="用户姓名" align="center" prop="realName" />
-      <el-table-column label="邮箱" align="center" prop="email" min-width="120px" />
       <el-table-column label="审核状态" align="center" prop="auditStatus">
         <template #default="scope">
           <dict-tag :type="DICT_TYPE.AUDIT_STATUS" :value="scope.row.auditStatus" />
@@ -104,6 +101,7 @@
       <el-table-column label="操作" align="center" min-width="180px">
         <template #default="scope">
           <el-button
+
             type="primary"
             @click="openForm('view', scope.row.id)"
             v-hasPermi="['user:info:query']"
@@ -112,6 +110,7 @@
           </el-button>
 
           <el-button
+
             type="warning"
             @click="handleApprove2FAUnbind(scope.row.id)"
             v-if="scope.row.twoFactorAuthStatus === 3"
@@ -121,6 +120,7 @@
           </el-button>
 
           <el-button
+
             type="primary"
             @click="openAuditReview(scope.row.id)"
             v-if="scope.row.auditStatus === 1"
@@ -130,6 +130,7 @@
           </el-button>
 
           <el-button
+
             type="warning"
             @click="openBankAudit(scope.row.pendingBankApplyId)"
             v-if="scope.row.auditStatus === 2 && scope.row.pendingBankApplyId"
@@ -153,7 +154,7 @@
   <InfoForm ref="formRef" @success="getList" />
   <!-- 详情弹窗 -->
   <InfoDetail ref="detailRef" />
-
+  
   <!-- 用户审核弹窗 -->
   <UserAuditReviewDialog ref="auditReviewRef" @success="getList" />
 
@@ -316,6 +317,7 @@ const bankAuditRef = ref()
 const openBankAudit = (bankId: number) => {
   bankAuditRef.value.open(bankId)
 }
+
 
 /** 初始化 **/
 onMounted(() => {
