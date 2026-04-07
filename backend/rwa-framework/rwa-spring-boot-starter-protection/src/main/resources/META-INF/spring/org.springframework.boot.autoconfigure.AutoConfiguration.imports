@@ -1,0 +1,4 @@
+cc.bamboo.framework.idempotent.config.RwaIdempotentConfiguration
+cc.bamboo.framework.lock4j.config.RwaLock4jConfiguration
+cc.bamboo.framework.ratelimiter.config.RwaRateLimiterConfiguration
+cc.bamboo.framework.signature.config.RwaApiSignatureAutoConfiguration

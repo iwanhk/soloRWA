@@ -1,0 +1,3 @@
+cc.bamboo.framework.redis.config.RwaRedisAutoConfiguration
+cc.bamboo.framework.redis.config.RwaCacheAutoConfiguration
+cc.bamboo.framework.redis.service.RedisService

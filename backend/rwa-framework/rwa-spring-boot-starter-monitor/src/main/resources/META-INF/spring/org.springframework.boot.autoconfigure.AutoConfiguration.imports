@@ -1,0 +1,2 @@
+cc.bamboo.framework.tracer.config.RwaTracerAutoConfiguration
+cc.bamboo.framework.tracer.config.RwaMetricsAutoConfiguration

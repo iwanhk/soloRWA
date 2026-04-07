@@ -1,0 +1,6 @@
+cc.bamboo.framework.apilog.config.RwaApiLogAutoConfiguration
+cc.bamboo.framework.jackson.config.RwaJacksonAutoConfiguration
+cc.bamboo.framework.swagger.config.RwaSwaggerAutoConfiguration
+cc.bamboo.framework.web.config.RwaWebAutoConfiguration
+cc.bamboo.framework.apilog.config.RwaApiLogRpcAutoConfiguration
+cc.bamboo.framework.banner.config.RwaBannerAutoConfiguration

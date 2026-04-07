@@ -1,0 +1,162 @@
+<template>
+  <Dialog :title="dialogTitle" v-model="dialogVisible">
+    <el-form
+      ref="formRef"
+      :model="formData"
+      :rules="formRules"
+      label-width="100px"
+      v-loading="formLoading"
+    >
+      <el-form-item label="用户地址" prop="address">
+        <el-input v-model="formData.address" placeholder="请输入用户地址" />
+      </el-form-item>
+      <el-form-item label="用户合约地址" prop="contractAddress">
+        <el-input v-model="formData.contractAddress" placeholder="请输入用户合约地址" />
+      </el-form-item>
+      <el-form-item label="管理密钥地址" prop="managementKey">
+        <el-input v-model="formData.managementKey" placeholder="请输入管理密钥地址" />
+      </el-form-item>
+      <el-form-item label="关联的区块链地址ID" prop="blockchainAddressId">
+        <el-input v-model="formData.blockchainAddressId" placeholder="请输入关联的区块链地址ID" />
+      </el-form-item>
+      <el-form-item label="盐值，用于加密或哈希计算" prop="salt">
+        <el-input v-model="formData.salt" placeholder="请输入盐值，用于加密或哈希计算" />
+      </el-form-item>
+      <el-form-item label="交易哈希" prop="transactionHash">
+        <el-input v-model="formData.transactionHash" placeholder="请输入交易哈希" />
+      </el-form-item>
+      <el-form-item label="区块号" prop="blockNumber">
+        <el-input v-model="formData.blockNumber" placeholder="请输入区块号" />
+      </el-form-item>
+      <el-form-item label="合约是否已部署，0-未部署，1-已部署" prop="contractDeployed">
+        <el-radio-group v-model="formData.contractDeployed">
+          <el-radio value="1">请选择字典生成</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="声明密钥是否已设置，0-未设置，1-已设置" prop="claimKeySetup">
+        <el-radio-group v-model="formData.claimKeySetup">
+          <el-radio value="1">请选择字典生成</el-radio>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="国家代码" prop="countryCode">
+        <el-input v-model="formData.countryCode" placeholder="请输入国家代码" />
+      </el-form-item>
+      <el-form-item label="关联的代币ID，JSON格式" prop="associatedTokenIds">
+        <el-input v-model="formData.associatedTokenIds" placeholder="请输入关联的代币ID，JSON格式" />
+      </el-form-item>
+      <el-form-item label="待处理的代币ID，JSON格式" prop="pendingTokenIds">
+        <el-input v-model="formData.pendingTokenIds" placeholder="请输入待处理的代币ID，JSON格式" />
+      </el-form-item>
+      <el-form-item label="状态，如active-活跃" prop="status">
+        <el-radio-group v-model="formData.status">
+          <el-radio value="1">请选择字典生成</el-radio>
+        </el-radio-group>
+      </el-form-item>
+    </el-form>
+    <template #footer>
+      <el-button @click="submitForm" type="primary" :disabled="formLoading">确 定</el-button>
+      <el-button @click="dialogVisible = false">取 消</el-button>
+    </template>
+  </Dialog>
+</template>
+<script setup lang="ts">
+import { UserIdentitiesApi, UserIdentitiesVO } from '@/api/chain/useridentities'
+
+/** 用户身份 表单 */
+defineOptions({ name: 'UserIdentitiesForm' })
+
+const { t } = useI18n() // 国际化
+const message = useMessage() // 消息弹窗
+
+const dialogVisible = ref(false) // 弹窗的是否展示
+const dialogTitle = ref('') // 弹窗的标题
+const formLoading = ref(false) // 表单的加载中：1）修改时的数据加载；2）提交的按钮禁用
+const formType = ref('') // 表单的类型：create - 新增；update - 修改
+const formData = ref({
+  id: undefined,
+  address: undefined,
+  contractAddress: undefined,
+  managementKey: undefined,
+  blockchainAddressId: undefined,
+  salt: undefined,
+  transactionHash: undefined,
+  blockNumber: undefined,
+  contractDeployed: undefined,
+  claimKeySetup: undefined,
+  countryCode: undefined,
+  associatedTokenIds: undefined,
+  pendingTokenIds: undefined,
+  status: undefined
+})
+const formRules = reactive({
+  address: [{ required: true, message: '用户地址不能为空', trigger: 'blur' }],
+  managementKey: [{ required: true, message: '管理密钥地址不能为空', trigger: 'blur' }],
+  contractDeployed: [{ required: true, message: '合约是否已部署，0-未部署，1-已部署不能为空', trigger: 'blur' }],
+  claimKeySetup: [{ required: true, message: '声明密钥是否已设置，0-未设置，1-已设置不能为空', trigger: 'blur' }],
+  status: [{ required: true, message: '状态，如active-活跃不能为空', trigger: 'blur' }]
+})
+const formRef = ref() // 表单 Ref
+
+/** 打开弹窗 */
+const open = async (type: string, id?: number) => {
+  dialogVisible.value = true
+  dialogTitle.value = t('action.' + type)
+  formType.value = type
+  resetForm()
+  // 修改时，设置数据
+  if (id) {
+    formLoading.value = true
+    try {
+      formData.value = await UserIdentitiesApi.getUserIdentities(id)
+    } finally {
+      formLoading.value = false
+    }
+  }
+}
+defineExpose({ open }) // 提供 open 方法，用于打开弹窗
+
+/** 提交表单 */
+const emit = defineEmits(['success']) // 定义 success 事件，用于操作成功后的回调
+const submitForm = async () => {
+  // 校验表单
+  await formRef.value.validate()
+  // 提交请求
+  formLoading.value = true
+  try {
+    const data = formData.value as unknown as UserIdentitiesVO
+    if (formType.value === 'create') {
+      await UserIdentitiesApi.createUserIdentities(data)
+      message.success(t('common.createSuccess'))
+    } else {
+      await UserIdentitiesApi.updateUserIdentities(data)
+      message.success(t('common.updateSuccess'))
+    }
+    dialogVisible.value = false
+    // 发送操作成功的事件
+    emit('success')
+  } finally {
+    formLoading.value = false
+  }
+}
+
+/** 重置表单 */
+const resetForm = () => {
+  formData.value = {
+    id: undefined,
+    address: undefined,
+    contractAddress: undefined,
+    managementKey: undefined,
+    blockchainAddressId: undefined,
+    salt: undefined,
+    transactionHash: undefined,
+    blockNumber: undefined,
+    contractDeployed: undefined,
+    claimKeySetup: undefined,
+    countryCode: undefined,
+    associatedTokenIds: undefined,
+    pendingTokenIds: undefined,
+    status: undefined
+  }
+  formRef.value?.resetFields()
+}
+</script>

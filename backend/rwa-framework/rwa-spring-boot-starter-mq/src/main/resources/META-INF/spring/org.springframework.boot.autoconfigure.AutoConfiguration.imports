@@ -1,0 +1,3 @@
+cc.bamboo.framework.mq.redis.config.RwaRedisMQProducerAutoConfiguration
+cc.bamboo.framework.mq.redis.config.RwaRedisMQConsumerAutoConfiguration
+cc.bamboo.framework.mq.rabbitmq.config.RwaRabbitMQAutoConfiguration

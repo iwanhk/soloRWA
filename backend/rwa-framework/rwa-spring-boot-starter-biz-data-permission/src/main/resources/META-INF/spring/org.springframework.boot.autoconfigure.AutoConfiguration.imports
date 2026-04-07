@@ -1,0 +1,3 @@
+cc.bamboo.framework.datapermission.config.RwaDataPermissionAutoConfiguration
+cc.bamboo.framework.datapermission.config.RwaDeptDataPermissionAutoConfiguration
+cc.bamboo.framework.datapermission.config.RwaDataPermissionRpcAutoConfiguration

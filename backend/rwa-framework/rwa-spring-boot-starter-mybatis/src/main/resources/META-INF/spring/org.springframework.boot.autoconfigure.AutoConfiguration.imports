@@ -1,0 +1,3 @@
+cc.bamboo.framework.datasource.config.RwaDataSourceAutoConfiguration
+cc.bamboo.framework.mybatis.config.RwaMybatisAutoConfiguration
+cc.bamboo.framework.translate.config.RwaTranslateAutoConfiguration

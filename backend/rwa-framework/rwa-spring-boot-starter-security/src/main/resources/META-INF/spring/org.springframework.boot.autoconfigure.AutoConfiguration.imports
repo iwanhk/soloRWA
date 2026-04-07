@@ -1,0 +1,5 @@
+cc.bamboo.framework.security.config.RwaSecurityRpcAutoConfiguration
+cc.bamboo.framework.security.config.RwaSecurityAutoConfiguration
+cc.bamboo.framework.security.config.RwaWebSecurityConfigurerAdapter
+cc.bamboo.framework.operatelog.config.RwaOperateLogConfiguration
+cc.bamboo.framework.operatelog.config.RwaOperateLogRpcAutoConfiguration
